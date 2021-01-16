@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f2da930f534cf448aeb1af963e1fd7e, type: 3}
+  m_Name: Demon
+  m_EditorClassIdentifier: 
+  ID: 2
+  HeroName: Demon
+  HeroSprite: {fileID: 21300000, guid: e1fca8fbb0fc8eb4ea0f3abf98529b8e, type: 3}
+  HeroPrefab: {fileID: 7879317205052088647, guid: 72ea349ed93b32c4ba17cce7e233ca1f,
+    type: 3}
+  Health: 110
+  Speed: 12
+  AutoAttack: {fileID: 11400000, guid: 2e608f3f02829d64fbaf33aab1f626a2, type: 2}
+  Attack1: {fileID: 11400000, guid: 9d107323a688f174c8838aa4ff5a2e44, type: 2}
+  Attack2: {fileID: 11400000, guid: f7847739327f4c8408dd99d4e6b0368c, type: 2}
+  Attack3: {fileID: 11400000, guid: d640c84d90877834fb4a03c9e0eeb888, type: 2}

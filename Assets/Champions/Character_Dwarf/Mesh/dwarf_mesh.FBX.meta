@@ -1,0 +1,940 @@
+fileFormatVersion: 2
+guid: ae8cc045e6238af40a51420a45395a15
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Bone001
+  - first:
+      1: 100002
+    second: Bone002
+  - first:
+      1: 100004
+    second: CATRigHub001
+  - first:
+      1: 100006
+    second: CATRigHub001Gizmo
+  - first:
+      1: 100008
+    second: CATRigHub002
+  - first:
+      1: 100010
+    second: CATRigHub002Gizmo
+  - first:
+      1: 100012
+    second: CATRigHub003
+  - first:
+      1: 100014
+    second: CATRigHub003Bone001
+  - first:
+      1: 100016
+    second: CATRigHub003Bone001Gizmo
+  - first:
+      1: 100018
+    second: CATRigHub003Bone002
+  - first:
+      1: 100020
+    second: CATRigHub003Bone002Gizmo
+  - first:
+      1: 100022
+    second: CATRigHub003Bone003
+  - first:
+      1: 100024
+    second: CATRigHub003Bone003Gizmo
+  - first:
+      1: 100026
+    second: CATRigHub003Bone004
+  - first:
+      1: 100028
+    second: CATRigHub003Bone004Gizmo
+  - first:
+      1: 100030
+    second: CATRigHub003Gizmo
+  - first:
+      1: 100032
+    second: CATRigLArm2
+  - first:
+      1: 100034
+    second: CATRigLArm21
+  - first:
+      1: 100036
+    second: CATRigLArm21Gizmo
+  - first:
+      1: 100038
+    second: CATRigLArm22
+  - first:
+      1: 100040
+    second: CATRigLArm2Gizmo
+  - first:
+      1: 100042
+    second: CATRigLArmCollarbone
+  - first:
+      1: 100044
+    second: CATRigLArmCollarboneGizmo
+  - first:
+      1: 100046
+    second: CATRigLArmDigit11
+  - first:
+      1: 100048
+    second: CATRigLArmDigit11Gizmo
+  - first:
+      1: 100050
+    second: CATRigLArmDigit12
+  - first:
+      1: 100052
+    second: CATRigLArmDigit12Gizmo
+  - first:
+      1: 100054
+    second: CATRigLArmDigit13
+  - first:
+      1: 100056
+    second: CATRigLArmDigit13Gizmo
+  - first:
+      1: 100058
+    second: CATRigLArmDigit21
+  - first:
+      1: 100060
+    second: CATRigLArmDigit21 1
+  - first:
+      1: 100062
+    second: CATRigLArmDigit21 2
+  - first:
+      1: 100064
+    second: CATRigLArmDigit21 3
+  - first:
+      1: 100066
+    second: CATRigLArmDigit21Gizmo
+  - first:
+      1: 100068
+    second: CATRigLArmDigit21Gizmo 1
+  - first:
+      1: 100070
+    second: CATRigLArmDigit21Gizmo 2
+  - first:
+      1: 100072
+    second: CATRigLArmDigit21Gizmo 3
+  - first:
+      1: 100074
+    second: CATRigLArmDigit22
+  - first:
+      1: 100076
+    second: CATRigLArmDigit22 1
+  - first:
+      1: 100078
+    second: CATRigLArmDigit22 2
+  - first:
+      1: 100080
+    second: CATRigLArmDigit22 3
+  - first:
+      1: 100082
+    second: CATRigLArmDigit22Gizmo
+  - first:
+      1: 100084
+    second: CATRigLArmDigit22Gizmo 1
+  - first:
+      1: 100086
+    second: CATRigLArmDigit22Gizmo 2
+  - first:
+      1: 100088
+    second: CATRigLArmDigit22Gizmo 3
+  - first:
+      1: 100090
+    second: CATRigLArmDigit23
+  - first:
+      1: 100092
+    second: CATRigLArmDigit23 1
+  - first:
+      1: 100094
+    second: CATRigLArmDigit23 2
+  - first:
+      1: 100096
+    second: CATRigLArmDigit23 3
+  - first:
+      1: 100098
+    second: CATRigLArmDigit23Gizmo
+  - first:
+      1: 100100
+    second: CATRigLArmDigit23Gizmo 1
+  - first:
+      1: 100102
+    second: CATRigLArmDigit23Gizmo 2
+  - first:
+      1: 100104
+    second: CATRigLArmDigit23Gizmo 3
+  - first:
+      1: 100106
+    second: CATRigLArmPalm
+  - first:
+      1: 100108
+    second: CATRigLArmPalmGizmo
+  - first:
+      1: 100110
+    second: CATRigLLeg1
+  - first:
+      1: 100112
+    second: CATRigLLeg1Gizmo
+  - first:
+      1: 100114
+    second: CATRigLLeg2
+  - first:
+      1: 100116
+    second: CATRigLLegAnkle
+  - first:
+      1: 100118
+    second: CATRigLLegAnkleGizmo
+  - first:
+      1: 100120
+    second: CATRigLLegDigit11
+  - first:
+      1: 100122
+    second: CATRigLLegDigit11Gizmo
+  - first:
+      1: 100124
+    second: CATRigLLegPlatform
+  - first:
+      1: 100126
+    second: CATRigRArm2
+  - first:
+      1: 100128
+    second: CATRigRArm21
+  - first:
+      1: 100130
+    second: CATRigRArm21Gizmo
+  - first:
+      1: 100132
+    second: CATRigRArm22
+  - first:
+      1: 100134
+    second: CATRigRArm2Gizmo
+  - first:
+      1: 100136
+    second: CATRigRArmCollarbone
+  - first:
+      1: 100138
+    second: CATRigRArmCollarboneGizmo
+  - first:
+      1: 100140
+    second: CATRigRArmDigit11
+  - first:
+      1: 100142
+    second: CATRigRArmDigit11Gizmo
+  - first:
+      1: 100144
+    second: CATRigRArmDigit12
+  - first:
+      1: 100146
+    second: CATRigRArmDigit12Gizmo
+  - first:
+      1: 100148
+    second: CATRigRArmDigit13
+  - first:
+      1: 100150
+    second: CATRigRArmDigit13Gizmo
+  - first:
+      1: 100152
+    second: CATRigRArmDigit21
+  - first:
+      1: 100154
+    second: CATRigRArmDigit21 1
+  - first:
+      1: 100156
+    second: CATRigRArmDigit21 2
+  - first:
+      1: 100158
+    second: CATRigRArmDigit21 3
+  - first:
+      1: 100160
+    second: CATRigRArmDigit21Gizmo
+  - first:
+      1: 100162
+    second: CATRigRArmDigit21Gizmo 1
+  - first:
+      1: 100164
+    second: CATRigRArmDigit21Gizmo 2
+  - first:
+      1: 100166
+    second: CATRigRArmDigit21Gizmo 3
+  - first:
+      1: 100168
+    second: CATRigRArmDigit22
+  - first:
+      1: 100170
+    second: CATRigRArmDigit22 1
+  - first:
+      1: 100172
+    second: CATRigRArmDigit22 2
+  - first:
+      1: 100174
+    second: CATRigRArmDigit22 3
+  - first:
+      1: 100176
+    second: CATRigRArmDigit22Gizmo
+  - first:
+      1: 100178
+    second: CATRigRArmDigit22Gizmo 1
+  - first:
+      1: 100180
+    second: CATRigRArmDigit22Gizmo 2
+  - first:
+      1: 100182
+    second: CATRigRArmDigit22Gizmo 3
+  - first:
+      1: 100184
+    second: CATRigRArmDigit23
+  - first:
+      1: 100186
+    second: CATRigRArmDigit23 1
+  - first:
+      1: 100188
+    second: CATRigRArmDigit23 2
+  - first:
+      1: 100190
+    second: CATRigRArmDigit23 3
+  - first:
+      1: 100192
+    second: CATRigRArmDigit23Gizmo
+  - first:
+      1: 100194
+    second: CATRigRArmDigit23Gizmo 1
+  - first:
+      1: 100196
+    second: CATRigRArmDigit23Gizmo 2
+  - first:
+      1: 100198
+    second: CATRigRArmDigit23Gizmo 3
+  - first:
+      1: 100200
+    second: CATRigRArmPalm
+  - first:
+      1: 100202
+    second: CATRigRArmPalmGizmo
+  - first:
+      1: 100204
+    second: CATRigRLeg1
+  - first:
+      1: 100206
+    second: CATRigRLeg1Gizmo
+  - first:
+      1: 100208
+    second: CATRigRLeg2
+  - first:
+      1: 100210
+    second: CATRigRLegAnkle
+  - first:
+      1: 100212
+    second: CATRigRLegAnkleGizmo
+  - first:
+      1: 100214
+    second: CATRigRLegDigit11
+  - first:
+      1: 100216
+    second: CATRigRLegDigit11Gizmo
+  - first:
+      1: 100218
+    second: CATRigRLegPlatform
+  - first:
+      1: 100220
+    second: CATRigSpine1
+  - first:
+      1: 100222
+    second: CATRigSpine1 1
+  - first:
+      1: 100224
+    second: CATRigSpine2
+  - first:
+      1: 100226
+    second: CATRigSpine2 1
+  - first:
+      1: 100228
+    second: CATRigTail1
+  - first:
+      1: 100230
+    second: CATRigTail1 1
+  - first:
+      1: 100232
+    second: CATRigTail1Gizmo
+  - first:
+      1: 100234
+    second: CATRigTail1Gizmo 1
+  - first:
+      1: 100236
+    second: CATRigTail2
+  - first:
+      1: 100238
+    second: CATRigTail2 1
+  - first:
+      1: 100240
+    second: CATRigTail2Gizmo
+  - first:
+      1: 100242
+    second: CATRigTail2Gizmo 1
+  - first:
+      1: 100244
+    second: CATRigTail3
+  - first:
+      1: 100246
+    second: CATRigTail3 1
+  - first:
+      1: 100248
+    second: CATRigTail3Gizmo
+  - first:
+      1: 100250
+    second: CATRigTail3Gizmo 1
+  - first:
+      1: 100252
+    second: Character001
+  - first:
+      1: 100254
+    second: //RootNode
+  - first:
+      1: 100256
+    second: Low_Axe
+  - first:
+      1: 100258
+    second: Low_body
+  - first:
+      1: 100260
+    second: Low_eyes
+  - first:
+      4: 400000
+    second: Bone001
+  - first:
+      4: 400002
+    second: Bone002
+  - first:
+      4: 400004
+    second: CATRigHub001
+  - first:
+      4: 400006
+    second: CATRigHub001Gizmo
+  - first:
+      4: 400008
+    second: CATRigHub002
+  - first:
+      4: 400010
+    second: CATRigHub002Gizmo
+  - first:
+      4: 400012
+    second: CATRigHub003
+  - first:
+      4: 400014
+    second: CATRigHub003Bone001
+  - first:
+      4: 400016
+    second: CATRigHub003Bone001Gizmo
+  - first:
+      4: 400018
+    second: CATRigHub003Bone002
+  - first:
+      4: 400020
+    second: CATRigHub003Bone002Gizmo
+  - first:
+      4: 400022
+    second: CATRigHub003Bone003
+  - first:
+      4: 400024
+    second: CATRigHub003Bone003Gizmo
+  - first:
+      4: 400026
+    second: CATRigHub003Bone004
+  - first:
+      4: 400028
+    second: CATRigHub003Bone004Gizmo
+  - first:
+      4: 400030
+    second: CATRigHub003Gizmo
+  - first:
+      4: 400032
+    second: CATRigLArm2
+  - first:
+      4: 400034
+    second: CATRigLArm21
+  - first:
+      4: 400036
+    second: CATRigLArm21Gizmo
+  - first:
+      4: 400038
+    second: CATRigLArm22
+  - first:
+      4: 400040
+    second: CATRigLArm2Gizmo
+  - first:
+      4: 400042
+    second: CATRigLArmCollarbone
+  - first:
+      4: 400044
+    second: CATRigLArmCollarboneGizmo
+  - first:
+      4: 400046
+    second: CATRigLArmDigit11
+  - first:
+      4: 400048
+    second: CATRigLArmDigit11Gizmo
+  - first:
+      4: 400050
+    second: CATRigLArmDigit12
+  - first:
+      4: 400052
+    second: CATRigLArmDigit12Gizmo
+  - first:
+      4: 400054
+    second: CATRigLArmDigit13
+  - first:
+      4: 400056
+    second: CATRigLArmDigit13Gizmo
+  - first:
+      4: 400058
+    second: CATRigLArmDigit21
+  - first:
+      4: 400060
+    second: CATRigLArmDigit21 1
+  - first:
+      4: 400062
+    second: CATRigLArmDigit21 2
+  - first:
+      4: 400064
+    second: CATRigLArmDigit21 3
+  - first:
+      4: 400066
+    second: CATRigLArmDigit21Gizmo
+  - first:
+      4: 400068
+    second: CATRigLArmDigit21Gizmo 1
+  - first:
+      4: 400070
+    second: CATRigLArmDigit21Gizmo 2
+  - first:
+      4: 400072
+    second: CATRigLArmDigit21Gizmo 3
+  - first:
+      4: 400074
+    second: CATRigLArmDigit22
+  - first:
+      4: 400076
+    second: CATRigLArmDigit22 1
+  - first:
+      4: 400078
+    second: CATRigLArmDigit22 2
+  - first:
+      4: 400080
+    second: CATRigLArmDigit22 3
+  - first:
+      4: 400082
+    second: CATRigLArmDigit22Gizmo
+  - first:
+      4: 400084
+    second: CATRigLArmDigit22Gizmo 1
+  - first:
+      4: 400086
+    second: CATRigLArmDigit22Gizmo 2
+  - first:
+      4: 400088
+    second: CATRigLArmDigit22Gizmo 3
+  - first:
+      4: 400090
+    second: CATRigLArmDigit23
+  - first:
+      4: 400092
+    second: CATRigLArmDigit23 1
+  - first:
+      4: 400094
+    second: CATRigLArmDigit23 2
+  - first:
+      4: 400096
+    second: CATRigLArmDigit23 3
+  - first:
+      4: 400098
+    second: CATRigLArmDigit23Gizmo
+  - first:
+      4: 400100
+    second: CATRigLArmDigit23Gizmo 1
+  - first:
+      4: 400102
+    second: CATRigLArmDigit23Gizmo 2
+  - first:
+      4: 400104
+    second: CATRigLArmDigit23Gizmo 3
+  - first:
+      4: 400106
+    second: CATRigLArmPalm
+  - first:
+      4: 400108
+    second: CATRigLArmPalmGizmo
+  - first:
+      4: 400110
+    second: CATRigLLeg1
+  - first:
+      4: 400112
+    second: CATRigLLeg1Gizmo
+  - first:
+      4: 400114
+    second: CATRigLLeg2
+  - first:
+      4: 400116
+    second: CATRigLLegAnkle
+  - first:
+      4: 400118
+    second: CATRigLLegAnkleGizmo
+  - first:
+      4: 400120
+    second: CATRigLLegDigit11
+  - first:
+      4: 400122
+    second: CATRigLLegDigit11Gizmo
+  - first:
+      4: 400124
+    second: CATRigLLegPlatform
+  - first:
+      4: 400126
+    second: CATRigRArm2
+  - first:
+      4: 400128
+    second: CATRigRArm21
+  - first:
+      4: 400130
+    second: CATRigRArm21Gizmo
+  - first:
+      4: 400132
+    second: CATRigRArm22
+  - first:
+      4: 400134
+    second: CATRigRArm2Gizmo
+  - first:
+      4: 400136
+    second: CATRigRArmCollarbone
+  - first:
+      4: 400138
+    second: CATRigRArmCollarboneGizmo
+  - first:
+      4: 400140
+    second: CATRigRArmDigit11
+  - first:
+      4: 400142
+    second: CATRigRArmDigit11Gizmo
+  - first:
+      4: 400144
+    second: CATRigRArmDigit12
+  - first:
+      4: 400146
+    second: CATRigRArmDigit12Gizmo
+  - first:
+      4: 400148
+    second: CATRigRArmDigit13
+  - first:
+      4: 400150
+    second: CATRigRArmDigit13Gizmo
+  - first:
+      4: 400152
+    second: CATRigRArmDigit21
+  - first:
+      4: 400154
+    second: CATRigRArmDigit21 1
+  - first:
+      4: 400156
+    second: CATRigRArmDigit21 2
+  - first:
+      4: 400158
+    second: CATRigRArmDigit21 3
+  - first:
+      4: 400160
+    second: CATRigRArmDigit21Gizmo
+  - first:
+      4: 400162
+    second: CATRigRArmDigit21Gizmo 1
+  - first:
+      4: 400164
+    second: CATRigRArmDigit21Gizmo 2
+  - first:
+      4: 400166
+    second: CATRigRArmDigit21Gizmo 3
+  - first:
+      4: 400168
+    second: CATRigRArmDigit22
+  - first:
+      4: 400170
+    second: CATRigRArmDigit22 1
+  - first:
+      4: 400172
+    second: CATRigRArmDigit22 2
+  - first:
+      4: 400174
+    second: CATRigRArmDigit22 3
+  - first:
+      4: 400176
+    second: CATRigRArmDigit22Gizmo
+  - first:
+      4: 400178
+    second: CATRigRArmDigit22Gizmo 1
+  - first:
+      4: 400180
+    second: CATRigRArmDigit22Gizmo 2
+  - first:
+      4: 400182
+    second: CATRigRArmDigit22Gizmo 3
+  - first:
+      4: 400184
+    second: CATRigRArmDigit23
+  - first:
+      4: 400186
+    second: CATRigRArmDigit23 1
+  - first:
+      4: 400188
+    second: CATRigRArmDigit23 2
+  - first:
+      4: 400190
+    second: CATRigRArmDigit23 3
+  - first:
+      4: 400192
+    second: CATRigRArmDigit23Gizmo
+  - first:
+      4: 400194
+    second: CATRigRArmDigit23Gizmo 1
+  - first:
+      4: 400196
+    second: CATRigRArmDigit23Gizmo 2
+  - first:
+      4: 400198
+    second: CATRigRArmDigit23Gizmo 3
+  - first:
+      4: 400200
+    second: CATRigRArmPalm
+  - first:
+      4: 400202
+    second: CATRigRArmPalmGizmo
+  - first:
+      4: 400204
+    second: CATRigRLeg1
+  - first:
+      4: 400206
+    second: CATRigRLeg1Gizmo
+  - first:
+      4: 400208
+    second: CATRigRLeg2
+  - first:
+      4: 400210
+    second: CATRigRLegAnkle
+  - first:
+      4: 400212
+    second: CATRigRLegAnkleGizmo
+  - first:
+      4: 400214
+    second: CATRigRLegDigit11
+  - first:
+      4: 400216
+    second: CATRigRLegDigit11Gizmo
+  - first:
+      4: 400218
+    second: CATRigRLegPlatform
+  - first:
+      4: 400220
+    second: CATRigSpine1
+  - first:
+      4: 400222
+    second: CATRigSpine1 1
+  - first:
+      4: 400224
+    second: CATRigSpine2
+  - first:
+      4: 400226
+    second: CATRigSpine2 1
+  - first:
+      4: 400228
+    second: CATRigTail1
+  - first:
+      4: 400230
+    second: CATRigTail1 1
+  - first:
+      4: 400232
+    second: CATRigTail1Gizmo
+  - first:
+      4: 400234
+    second: CATRigTail1Gizmo 1
+  - first:
+      4: 400236
+    second: CATRigTail2
+  - first:
+      4: 400238
+    second: CATRigTail2 1
+  - first:
+      4: 400240
+    second: CATRigTail2Gizmo
+  - first:
+      4: 400242
+    second: CATRigTail2Gizmo 1
+  - first:
+      4: 400244
+    second: CATRigTail3
+  - first:
+      4: 400246
+    second: CATRigTail3 1
+  - first:
+      4: 400248
+    second: CATRigTail3Gizmo
+  - first:
+      4: 400250
+    second: CATRigTail3Gizmo 1
+  - first:
+      4: 400252
+    second: Character001
+  - first:
+      4: 400254
+    second: //RootNode
+  - first:
+      4: 400256
+    second: Low_Axe
+  - first:
+      4: 400258
+    second: Low_body
+  - first:
+      4: 400260
+    second: Low_eyes
+  - first:
+      23: 2300000
+    second: CATRigLArm21Gizmo
+  - first:
+      23: 2300002
+    second: CATRigRArm21Gizmo
+  - first:
+      23: 2300004
+    second: Low_eyes
+  - first:
+      33: 3300000
+    second: CATRigLArm21Gizmo
+  - first:
+      33: 3300002
+    second: CATRigRArm21Gizmo
+  - first:
+      33: 3300004
+    second: Low_eyes
+  - first:
+      43: 4300000
+    second: Low_body
+  - first:
+      43: 4300002
+    second: Low_Axe
+  - first:
+      43: 4300004
+    second: Low_eyes
+  - first:
+      43: 4300006
+    second: CATRigLArm21Gizmo
+  - first:
+      43: 4300008
+    second: CATRigRArm21Gizmo
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Low_Axe
+  - first:
+      137: 13700002
+    second: Low_body
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 9e635f0f37bfd274d9100a8340b68f25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axe
+    second: {fileID: 2100000, guid: 15f200283840b9745a002ea5775ad68e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire_115115115
+    second: {fileID: 2100000, guid: 6a8100d16731f41428ab72498c979702, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

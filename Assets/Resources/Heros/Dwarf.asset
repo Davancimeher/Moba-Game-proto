@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f2da930f534cf448aeb1af963e1fd7e, type: 3}
+  m_Name: Dwarf
+  m_EditorClassIdentifier: 
+  ID: 3
+  HeroName: Dwarf
+  HeroSprite: {fileID: 21300000, guid: e82b8153216f67b46b068aaef27449c4, type: 3}
+  HeroPrefab: {fileID: 3461010340761104406, guid: 86c79b045bebe3b49b0491566e27ca20,
+    type: 3}
+  Health: 130
+  Speed: 12.5
+  AutoAttack: {fileID: 11400000, guid: 40f6fa6494120cf49a63c2f51c50cecf, type: 2}
+  Attack1: {fileID: 11400000, guid: e59c42ede7d36a34e9d28a9766070ffc, type: 2}
+  Attack2: {fileID: 11400000, guid: 3b65c6f750bf9084490d2887561a5f7e, type: 2}
+  Attack3: {fileID: 11400000, guid: df6bb5c8a6687354b867caf229c16306, type: 2}

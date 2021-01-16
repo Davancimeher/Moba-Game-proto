@@ -1,0 +1,289 @@
+fileFormatVersion: 2
+guid: 7e0ee8e74318efd41b69fd67e92e2575
+timeCreated: 1472129228
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armor_on_biceps
+    100002: Armor_on_foot
+    100004: Armor_on_forearm
+    100006: Armor_on_knees
+    100008: Armor_on_shoulders001
+    100010: Body
+    100012: CATRigAnkleBone001
+    100014: CATRigAnkleBone001 1
+    100016: CATRigHub001
+    100018: CATRigHub001Bone001
+    100020: CATRigHub001Bone001Bone001
+    100022: CATRigHub001Bone001Bone001 1
+    100024: CATRigHub001Bone001Bone001Bone001
+    100026: CATRigHub001Bone001Bone001Bone001 1
+    100028: CATRigHub001Bone002
+    100030: CATRigHub001Bone003
+    100032: CATRigHub001Bone003Bone001
+    100034: CATRigHub001Bone003Bone001 1
+    100036: CATRigHub001Bone003Bone001Bone001
+    100038: CATRigHub001Bone003Bone001Bone001 1
+    100040: CATRigHub001Bone004
+    100042: CATRigHub001Bone005
+    100044: CATRigHub001Bone006
+    100046: CATRigHub001Bone007
+    100048: CATRigHub002
+    100050: CATRigHub002Bone001
+    100052: CATRigHub002Bone002
+    100054: CATRigHub003
+    100056: CATRigHub003Bone001
+    100058: CATRigHub003Bone002
+    100060: CATRigLArm1
+    100062: CATRigLArm2
+    100064: CATRigLArmCollarbone
+    100066: CATRigLArmDigit11
+    100068: CATRigLArmDigit12
+    100070: CATRigLArmDigit13
+    100072: CATRigLArmDigit21
+    100074: CATRigLArmDigit22
+    100076: CATRigLArmDigit23
+    100078: CATRigLArmDigit31
+    100080: CATRigLArmDigit32
+    100082: CATRigLArmDigit33
+    100084: CATRigLArmDigit41
+    100086: CATRigLArmDigit42
+    100088: CATRigLArmDigit43
+    100090: CATRigLArmDigit51
+    100092: CATRigLArmDigit52
+    100094: CATRigLArmDigit53
+    100096: CATRigLArmPalm
+    100098: CATRigLLeg1
+    100100: CATRigLLeg2
+    100102: CATRigLLegAnkle
+    100104: CATRigLLegDigit11
+    100106: CATRigLLegPlatform
+    100108: CATRigRArm1
+    100110: CATRigRArm2
+    100112: CATRigRArmCollarbone
+    100114: CATRigRArmDigit11
+    100116: CATRigRArmDigit12
+    100118: CATRigRArmDigit13
+    100120: CATRigRArmDigit21
+    100122: CATRigRArmDigit22
+    100124: CATRigRArmDigit23
+    100126: CATRigRArmDigit31
+    100128: CATRigRArmDigit32
+    100130: CATRigRArmDigit33
+    100132: CATRigRArmDigit41
+    100134: CATRigRArmDigit42
+    100136: CATRigRArmDigit43
+    100138: CATRigRArmDigit51
+    100140: CATRigRArmDigit52
+    100142: CATRigRArmDigit53
+    100144: CATRigRArmPalm
+    100146: CATRigRLeg1
+    100148: CATRigRLeg2
+    100150: CATRigRLegAnkle
+    100152: CATRigRLegDigit11
+    100154: CATRigRLegPlatform
+    100156: CATRigSpine
+    100158: CATRigSpine1
+    100160: CATRigSpine2
+    100162: Character
+    100164: Character001
+    100166: Cloth
+    100168: Eyes
+    100170: Feathers
+    100172: Object001
+    100174: Object002
+    100176: Object003
+    100178: Sword
+    100180: //RootNode
+    400000: Armor_on_biceps
+    400002: Armor_on_foot
+    400004: Armor_on_forearm
+    400006: Armor_on_knees
+    400008: Armor_on_shoulders001
+    400010: Body
+    400012: CATRigAnkleBone001
+    400014: CATRigAnkleBone001 1
+    400016: CATRigHub001
+    400018: CATRigHub001Bone001
+    400020: CATRigHub001Bone001Bone001
+    400022: CATRigHub001Bone001Bone001 1
+    400024: CATRigHub001Bone001Bone001Bone001
+    400026: CATRigHub001Bone001Bone001Bone001 1
+    400028: CATRigHub001Bone002
+    400030: CATRigHub001Bone003
+    400032: CATRigHub001Bone003Bone001
+    400034: CATRigHub001Bone003Bone001 1
+    400036: CATRigHub001Bone003Bone001Bone001
+    400038: CATRigHub001Bone003Bone001Bone001 1
+    400040: CATRigHub001Bone004
+    400042: CATRigHub001Bone005
+    400044: CATRigHub001Bone006
+    400046: CATRigHub001Bone007
+    400048: CATRigHub002
+    400050: CATRigHub002Bone001
+    400052: CATRigHub002Bone002
+    400054: CATRigHub003
+    400056: CATRigHub003Bone001
+    400058: CATRigHub003Bone002
+    400060: CATRigLArm1
+    400062: CATRigLArm2
+    400064: CATRigLArmCollarbone
+    400066: CATRigLArmDigit11
+    400068: CATRigLArmDigit12
+    400070: CATRigLArmDigit13
+    400072: CATRigLArmDigit21
+    400074: CATRigLArmDigit22
+    400076: CATRigLArmDigit23
+    400078: CATRigLArmDigit31
+    400080: CATRigLArmDigit32
+    400082: CATRigLArmDigit33
+    400084: CATRigLArmDigit41
+    400086: CATRigLArmDigit42
+    400088: CATRigLArmDigit43
+    400090: CATRigLArmDigit51
+    400092: CATRigLArmDigit52
+    400094: CATRigLArmDigit53
+    400096: CATRigLArmPalm
+    400098: CATRigLLeg1
+    400100: CATRigLLeg2
+    400102: CATRigLLegAnkle
+    400104: CATRigLLegDigit11
+    400106: CATRigLLegPlatform
+    400108: CATRigRArm1
+    400110: CATRigRArm2
+    400112: CATRigRArmCollarbone
+    400114: CATRigRArmDigit11
+    400116: CATRigRArmDigit12
+    400118: CATRigRArmDigit13
+    400120: CATRigRArmDigit21
+    400122: CATRigRArmDigit22
+    400124: CATRigRArmDigit23
+    400126: CATRigRArmDigit31
+    400128: CATRigRArmDigit32
+    400130: CATRigRArmDigit33
+    400132: CATRigRArmDigit41
+    400134: CATRigRArmDigit42
+    400136: CATRigRArmDigit43
+    400138: CATRigRArmDigit51
+    400140: CATRigRArmDigit52
+    400142: CATRigRArmDigit53
+    400144: CATRigRArmPalm
+    400146: CATRigRLeg1
+    400148: CATRigRLeg2
+    400150: CATRigRLegAnkle
+    400152: CATRigRLegDigit11
+    400154: CATRigRLegPlatform
+    400156: CATRigSpine
+    400158: CATRigSpine1
+    400160: CATRigSpine2
+    400162: Character
+    400164: Character001
+    400166: Cloth
+    400168: Eyes
+    400170: Feathers
+    400172: Object001
+    400174: Object002
+    400176: Object003
+    400178: Sword
+    400180: //RootNode
+    2300000: Armor_on_biceps
+    2300002: Armor_on_forearm
+    2300004: Armor_on_knees
+    2300006: Eyes
+    2300008: Object001
+    2300010: Object002
+    2300012: Object003
+    2300014: Sword
+    3300000: Armor_on_biceps
+    3300002: Armor_on_forearm
+    3300004: Armor_on_knees
+    3300006: Eyes
+    3300008: Object001
+    3300010: Object002
+    3300012: Object003
+    3300014: Sword
+    4300000: Sword
+    4300002: Object003
+    4300004: Armor_on_knees
+    4300006: Eyes
+    4300008: Object002
+    4300010: Object001
+    4300012: Armor_on_forearm
+    4300014: Armor_on_biceps
+    4300016: Cloth
+    4300018: Armor_on_shoulders001
+    4300020: Armor_on_foot
+    4300022: Feathers
+    4300024: Body
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Armor_on_foot
+    13700002: Armor_on_shoulders001
+    13700004: Body
+    13700006: Cloth
+    13700008: Feathers
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 98a283ea4bac7774887c24e833b27742
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: StratumNo2
+  fontNames:
+  - StratumNo2
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 60991662a946cc34ab56d2b66ac1595f, type: 3}
+  - {fileID: 12800000, guid: 234982f5dab13b74290bfa50071f8b9a, type: 3}
+  - {fileID: 12800000, guid: 8e9ed9cada105be4a9d201d678767395, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
