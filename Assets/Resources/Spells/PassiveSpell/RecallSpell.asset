@@ -16,6 +16,6 @@ MonoBehaviour:
   HasRpcCalls: 1
   CanAttack: 0
   SpellID: 0
-  SpellDuration: 10
+  SpellDuration: 7
   SpellSprite: {fileID: 0}
   SpellFX: {fileID: 0}

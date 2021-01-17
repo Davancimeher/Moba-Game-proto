@@ -8,7 +8,7 @@ public class PlayerMouvement : MonoBehaviour
     public CharacterController controller;
     public Animator animator;
     public PhotonView m_MyphotonView;
-
+    public ChampionManager m_ChampionManager;
     public float speed;
     public float turnSmoothTime = 0.1f;
 
@@ -54,6 +54,10 @@ public class PlayerMouvement : MonoBehaviour
 
         if (direction.magnitude >= 0.5f)
         {
+            if (m_ChampionManager.m_SpellManager.m_InRecall)
+            {
+                m_ChampionManager.ExecuteCancelRecall();
+            }
             targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
 
             angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);

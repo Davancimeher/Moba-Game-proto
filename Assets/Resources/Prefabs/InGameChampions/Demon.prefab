@@ -258,6 +258,7 @@ MonoBehaviour:
   controller: {fileID: 2845729957975693088}
   animator: {fileID: 8442479565217039393}
   m_MyphotonView: {fileID: 0}
+  m_ChampionManager: {fileID: -2518309486706080876}
   speed: 7
   turnSmoothTime: 0.2
   m_isDead: 0
@@ -423,6 +424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InRespawn: 0
+  SpawnPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &6904655722411255181
 MonoBehaviour:
   m_ObjectHideFlags: 0

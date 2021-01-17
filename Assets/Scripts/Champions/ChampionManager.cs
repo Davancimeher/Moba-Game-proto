@@ -538,6 +538,17 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
             StopCoroutine(RecallCoroutine());
         }
     }
+    public void ExecuteCancelRecall()
+    {
+        m_MyPhotonView.RPC("RPC_CancelRecall", RpcTarget.AllViaServer);
+    }
+    [PunRPC]
+    public void RPC_CancelRecall()
+    {
+        state = ActualState.PASSIVE;
+        m_RecallFx.SetActive(false);
+        m_SpellManager.CancelRecall();
+    }
     #region Delegates
     //attack 1 Inits
 

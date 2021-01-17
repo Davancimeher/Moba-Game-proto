@@ -54,6 +54,10 @@ public class HealthManager : MonoBehaviour, IPunObservable
         UpdateHealthBar(Health);
         ShowDamage(_damage);
         CheckIfGoToDead();
+        if (m_ChampionManager.m_SpellManager.m_InRecall)
+        {
+            m_ChampionManager.ExecuteCancelRecall();
+        }
     }
 
     public void ExecuteDamageRPC(PhotonView senderPhotonView, Player playerDamaged, int _damage)

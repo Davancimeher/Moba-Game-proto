@@ -192,4 +192,8 @@ public class SpellManager : MonoBehaviour
         m_RecallSpell.ResetRpcVaribales(this);
         m_InRecall = false;
     }
+    public void CancelRecall()
+    {
+        m_InRecall = false;
+    }
 }
