@@ -388,6 +388,7 @@ MonoBehaviour:
   m_PlayerMouvement: {fileID: 7060777651779495348}
   m_SetPlayerInGameInfo: {fileID: 8246760313290647902}
   m_SpellManager: {fileID: 8496581675517079250}
+  m_LagPlayerSync: {fileID: 7713128311900336826}
   m_HitObject: {fileID: 6328858588679259005}
   m_HitBox: {fileID: 7879317205052088647}
   m_HitCollider: {fileID: 8674487506586032396}
@@ -407,6 +408,7 @@ MonoBehaviour:
   m_respowntime: 0
   m_Tower: {fileID: 0}
   m_UnderTower: 0
+  m_InPriorityList: 0
   canAttack: 0
 --- !u!114 &7713128311900336826
 MonoBehaviour:
@@ -420,6 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02053f0c73bf0ff4290c38d1ba6931ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InRespawn: 0
 --- !u!114 &6904655722411255181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,7 +535,7 @@ PrefabInstance:
     - target: {fileID: 6928856615147272764, guid: f38afe719d48d6a48a2f4ae62fb614ee,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6928856615147272764, guid: f38afe719d48d6a48a2f4ae62fb614ee,
         type: 3}

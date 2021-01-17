@@ -33,7 +33,8 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
     public HealthManager m_HealthManager;
     public PlayerMouvement m_PlayerMouvement;
     public SetPlayerInGameInfo m_SetPlayerInGameInfo;
-    public SpellManager m_SpellManager; 
+    public SpellManager m_SpellManager;
+    public LagPlayerSync m_LagPlayerSync;   
 
     [Header("collisions")]
     public GameObject m_HitObject;
@@ -104,7 +105,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
 
     public Tower m_Tower;
     public bool m_UnderTower;
-
+    public bool m_InPriorityList;
     public bool canAttack;
 
 
@@ -478,8 +479,9 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
     {
         while (state == ActualState.DEAD)
         {
+            m_LagPlayerSync.InRespawn = true;
             m_ChampionCharacter.SetActive(false);
-            this.transform.position = InGameManager.IGM.mySpawnPoint;
+            this.transform.position = m_LagPlayerSync.SpawnPosition;
             m_Animator.SetBool("isDead", false);
 
             yield return new WaitForSeconds(1f);
@@ -489,6 +491,8 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
             m_SetPlayerInGameInfo.m_ChampionCanvas.SetActive(true);
             m_ChampionCharacter.SetActive(true);
             state = ActualState.PASSIVE;
+            m_LagPlayerSync.InRespawn = false;
+
             StopCoroutine(RespawnCoroutine());
         }
     }
@@ -515,8 +519,12 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
     {
         while (state == ActualState.IN_RECALL)
         {
+            m_LagPlayerSync.InRespawn = true;
             m_ChampionCharacter.SetActive(false);
-            this.transform.position = InGameManager.IGM.mySpawnPoint;
+            m_RecallFx.SetActive(false);
+            m_SetPlayerInGameInfo.m_ChampionCanvas.SetActive(false);
+
+            this.transform.position = m_LagPlayerSync.SpawnPosition;
 
             yield return new WaitForSeconds(1f);
 
@@ -526,6 +534,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
             m_ChampionCharacter.SetActive(true);
             state = ActualState.PASSIVE;
             m_RecallFx.SetActive(false);
+            m_LagPlayerSync.InRespawn = false;
             StopCoroutine(RecallCoroutine());
         }
     }

@@ -125,6 +125,11 @@ public class Tower : MonoBehaviour
         {
             m_PriorityTargetsList.Add(_towerTarget.ViewID);
         }
+
+        if (_towerTarget.ViewID == InGameManager.IGM.m_MyChampionManager.m_MyPhotonView.ViewID)
+        {
+            InGameManager.IGM.m_MyChampionManager.m_InPriorityList = true;
+        }
     }
     public void RemovePriorityTarget(TowerTarget _towerTarget)
     {
@@ -135,6 +140,11 @@ public class Tower : MonoBehaviour
         if (m_PriorityTargetsList.Contains(_towerTarget.ViewID))
         {
             m_PriorityTargetsList.Remove(_towerTarget.ViewID);
+        }
+
+        if (_towerTarget.ViewID == InGameManager.IGM.m_MyChampionManager.m_MyPhotonView.ViewID)
+        {
+            InGameManager.IGM.m_MyChampionManager.m_InPriorityList = false;
         }
     }
 

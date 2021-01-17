@@ -32,7 +32,7 @@ public class HitTrigger : MonoBehaviour
 
                         HealthManager.ShowDamage(ChampionManager.m_ActualAttack.Damage);
 
-                        if (ChampionManager.m_UnderTower)
+                        if (ChampionManager.m_UnderTower && !ChampionManager.m_InPriorityList)
                         {
                             Debug.LogError("Attack under tower");
                             //send RPC to Master to add this champion to proiority target

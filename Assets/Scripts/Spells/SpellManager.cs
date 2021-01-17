@@ -10,7 +10,7 @@ public class SpellManager : MonoBehaviour
 {
 
     public ChampionManager ChampionManager;
-    public Spell m_RecallSpell; 
+    public Spell m_RecallSpell;
     public Spell m_actualSpell;
 
     private float m_spellDuration;
@@ -160,7 +160,7 @@ public class SpellManager : MonoBehaviour
 
     public void ExecutePassiveSpell(Spell _spell)
     {
-        if(_spell.SpellType == SpellType.PASSIVE)
+        if (_spell.SpellType == SpellType.PASSIVE)
         {
 
         }
@@ -172,7 +172,8 @@ public class SpellManager : MonoBehaviour
 
     public void ExecuteRecallSpell()
     {
-        ChampionManager.m_MyPhotonView.RPC("RPC_RunRecallSpell", RpcTarget.AllViaServer);
+        if (!m_InRecall)
+            ChampionManager.m_MyPhotonView.RPC("RPC_RunRecallSpell", RpcTarget.AllViaServer);
     }
     [PunRPC]
     public void RPC_RunRecallSpell()

@@ -15,6 +15,7 @@ public class InGameManager : MonoBehaviour
     public UltimateJoystick m_joystick;
     public CameraController m_CameraController;
     public GameObject m_ChampionCanvas;
+    public ChampionManager m_MyChampionManager;
 
     public List<Transform> SpawnPointsTeam1 = new List<Transform>();
     public List<Transform> SpawnPointsTeam2 = new List<Transform>();
@@ -101,7 +102,11 @@ public class InGameManager : MonoBehaviour
         };
         MyChampion = PhotonNetwork.Instantiate(Path.Combine("Prefabs/InGameChampions", myHero.HeroName), myPlayerPosition, Quaternion.identity, 0, myCustomInitData) ;
 
-        MyChampion.GetComponent<ChampionManager>().InitChampionManager(myHero, m_AutoAttackObject, m_Attack1Object, m_Attack2Object, m_Attack3Object, m_CancelButton,m_RecallSpellObject);
+        m_MyChampionManager = MyChampion.GetComponent<ChampionManager>();
+
+        m_MyChampionManager.InitChampionManager(myHero, m_AutoAttackObject, m_Attack1Object, m_Attack2Object, m_Attack3Object, m_CancelButton,m_RecallSpellObject);
+
+        m_MyChampionManager.m_LagPlayerSync.SpawnPosition = myPlayerPosition;
 
         m_CameraController.SetUpCamera(MyChampion.transform);
 
