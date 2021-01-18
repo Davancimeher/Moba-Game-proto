@@ -190,7 +190,7 @@ public class Tower : MonoBehaviour
         {
             if (m_ActualTarget != null)
             {
-                if (m_ActualTarget.HealthManager.Health > 0)
+                if (m_ActualTarget.HealthManager.m_ChampionManager.state != ActualState.DEAD)
                 {
                     ExecuteRPCTowerAttack(m_ActualTarget.ViewID, (byte)m_ActualTarget.TowerTargetType);
                 }
@@ -208,6 +208,7 @@ public class Tower : MonoBehaviour
     public void ExecuteRPCTowerAttack(int _towerTargetViewId, byte TowerTargetType)
     {
         m_TowerPhotonView.RPC("RPC_TowerAttack", RpcTarget.AllViaServer, _towerTargetViewId, TowerTargetType);
+        PhotonNetwork.SendAllOutgoingCommands();
     }
 
     [PunRPC]
