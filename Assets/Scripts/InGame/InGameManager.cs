@@ -1,19 +1,22 @@
-﻿using Photon.Pun;
+﻿using Cinemachine;
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TMPro;
+
 public class InGameManager : MonoBehaviour
 {
     public PhotonView m_MasterPhotonView;
     public static InGameManager IGM;
     public GameObject MyChampion;
     public UltimateJoystick m_joystick;
-    public CameraController m_CameraController;
+    //public CameraController m_CameraController;
+    public CinemachineFreeLook m_Camera;
     public GameObject m_ChampionCanvas;
     public ChampionManager m_MyChampionManager;
 
@@ -100,15 +103,16 @@ public class InGameManager : MonoBehaviour
         {
             myHero.Health
         };
-        MyChampion = PhotonNetwork.Instantiate(Path.Combine("Prefabs/InGameChampions", myHero.HeroName), myPlayerPosition, Quaternion.identity, 0, myCustomInitData) ;
+        MyChampion = PhotonNetwork.Instantiate(Path.Combine("Prefabs/InGameChampions", myHero.HeroName), myPlayerPosition, Quaternion.identity, 0, myCustomInitData);
 
         m_MyChampionManager = MyChampion.GetComponent<ChampionManager>();
 
-        m_MyChampionManager.InitChampionManager(myHero, m_AutoAttackObject, m_Attack1Object, m_Attack2Object, m_Attack3Object, m_CancelButton,m_RecallSpellObject);
+        m_MyChampionManager.InitChampionManager(myHero, m_AutoAttackObject, m_Attack1Object, m_Attack2Object, m_Attack3Object, m_CancelButton, m_RecallSpellObject);
 
         m_MyChampionManager.m_LagPlayerSync.SpawnPosition = myPlayerPosition;
 
-        m_CameraController.SetUpCamera(MyChampion.transform);
+       //  m_CameraController.SetUpCamera(MyChampion.transform);
+        m_Camera.Follow = MyChampion.transform;
 
     }
 
@@ -123,7 +127,7 @@ public class InGameManager : MonoBehaviour
     {
         foreach (var tower in m_Towers)
         {
-            tower.InitTower();  
+            tower.InitTower();
         }
     }
 }
