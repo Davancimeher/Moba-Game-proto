@@ -208,7 +208,7 @@ public class Tower : MonoBehaviour
     public void ExecuteRPCTowerAttack(int _towerTargetViewId, byte TowerTargetType)
     {
         m_TowerPhotonView.RPC("RPC_TowerAttack", RpcTarget.AllViaServer, _towerTargetViewId, TowerTargetType);
-        PhotonNetwork.SendAllOutgoingCommands();
+       // PhotonNetwork.SendAllOutgoingCommands();
     }
 
     [PunRPC]

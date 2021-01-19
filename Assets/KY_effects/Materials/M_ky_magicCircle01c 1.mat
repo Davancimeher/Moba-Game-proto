@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_ky_aura
-  m_Shader: {fileID: 10723, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION _FRESNELOFF_ON _HAVEALPHA_ON
-  m_LightmapFlags: 0
+  m_Name: M_ky_magicCircle01c 1
+  m_Shader: {fileID: 10750, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _EMISSION
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -40,9 +40,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: d7ad2ca2f23044124ada3a8fbc438c4e, type: 3}
+        m_Texture: {fileID: 2800000, guid: c3921be87f5cb4fc59d61ceac5711076, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0.18}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -53,10 +53,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _noseTex:
-        m_Texture: {fileID: 2800000, guid: 0b365c3f883d54bbf8994ed5f1b892b9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -75,38 +71,28 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _UVcompY: 1
     - _ZWrite: 1
-    - _alphaDensity: 1
-    - _alphaPower: 1.5
+    - _alphaDensity: 1.8
+    - _alphaPower: 5
     - _baseTexDensity: 1
-    - _baseTexRot: 0
     - _baseTexSpdX: 0
     - _baseTexSpdY: 0
     - _baseTexU: 1
-    - _baseTexV: 0.5
+    - _baseTexV: 1
     - _channelDivid: 3
-    - _compYInv: 0
-    - _emissive: 2.5
-    - _fresInv: 0
-    - _fresPower: 1
-    - _fresnelOff: 1
-    - _haveAlpha: 1
-    - _noiseDensity: 1
-    - _noisePower: 0.2
-    - _noiseTexSpdX: 0
-    - _noiseTexSpdY: -1
-    - _noiseTexU: 10
-    - _noiseTexV: 0.3
+    - _emissive: 5
+    - _emissiveB: 15
+    - _emissiveG: 0
+    - _emissiveR: 0
+    - _haveAlpha: 0
     - _notUseBch: 0
     - _notUseGch: 0
     - _notUseRch: 0
     - _simpleToon: 0
-    - _texPower: 3.5
     - _useTexColor: 0
-    - _vertAlphaDensity: 1
     - _vertColorDensity: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmisColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _colorB: {r: 0.45171168, g: 0.10202206, b: 0.8161765, a: 1}
+    - _colorG: {r: 1, g: 0, b: 0.06206894, a: 1}

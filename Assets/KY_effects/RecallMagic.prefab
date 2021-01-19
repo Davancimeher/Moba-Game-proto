@@ -4823,7 +4823,6 @@ GameObject:
   - component: {fileID: 6928856615147272764}
   - component: {fileID: 7104820296400588570}
   - component: {fileID: 7126091993839894326}
-  - component: {fileID: 7039981587808358276}
   m_Layer: 0
   m_Name: RecallMagic
   m_TagString: Untagged
@@ -9585,8 +9584,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 181309efeee3f426ba34fd9e0dd7c511, type: 2}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: ef9f43ac96d08444faeac6ad75cba731, type: 2}
+  - {fileID: 2100000, guid: ef9f43ac96d08444faeac6ad75cba731, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9630,19 +9629,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &7039981587808358276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6928091062340650438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf76de23b649e400e90fe60169c6769d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  time: 3
 --- !u!1 &6928091062767116788
 GameObject:
   m_ObjectHideFlags: 0
@@ -23862,7 +23848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6928856617203826410
 Transform:
   m_ObjectHideFlags: 0
