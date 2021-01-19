@@ -290,7 +290,7 @@ public class CurrentRoomManager : MonoBehaviour, IInRoomCallbacks
 
                 if (PhotonNetwork.IsMasterClient)
                 {
-                    if (RoomData.RD.m_PlayersReady.Count == GlobalVariables.m_MaxPlayersInRoom)
+                    if (RoomData.RD.m_PlayersReady.Count == PhotonNetwork.CurrentRoom.MaxPlayers)
                     {
                         //send teams 
                         RoomData.RD.m_PlayersTeams = GetPlayersTeam();
@@ -522,7 +522,7 @@ public class CurrentRoomManager : MonoBehaviour, IInRoomCallbacks
 
             if (PhotonNetwork.IsMasterClient)
             {
-                if (RoomData.RD.m_PlayersSceneReady.Count == GlobalVariables.m_MaxPlayersInRoom)
+                if (RoomData.RD.m_PlayersSceneReady.Count == PhotonNetwork.CurrentRoom.MaxPlayers)
                 {
                     StartCoroutine(ActivateSceneCoroutine());
 
@@ -871,7 +871,7 @@ public class CurrentRoomManager : MonoBehaviour, IInRoomCallbacks
 
         Debug.Log("New Player : " + newPlayer.NickName);
 
-        if (PhotonNetwork.CurrentRoom.PlayerCount == GlobalVariables.m_MaxPlayersInRoom)
+        if (PhotonNetwork.CurrentRoom.PlayerCount == PhotonNetwork.CurrentRoom.MaxPlayers)
         {
             SendUpdateMatchState(CurrentRoomState.READY_COUNTDOWN);
         }

@@ -1,7 +1,9 @@
 ﻿using Photon.Pun;
 using Photon.Realtime;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +13,10 @@ public class UIManager : MonoBehaviour
 
     [Header("Start Button")]
     public Button m_startButton;
+
+    [Header("Matchmaking type")]
+    public TMP_Dropdown m_MacthmakingDropDown;
+    public TextMeshProUGUI m_MacthmakingDropDownLabes;
 
     [Header("UI Text")]
 
@@ -89,7 +95,7 @@ public class UIManager : MonoBehaviour
     {
         m_startButton.interactable = state;
     }
-
+   
     public void StartMatchMakingTime()
     {
         PlayerState.m_Instance.OverrideState(State.INLOBBY);
