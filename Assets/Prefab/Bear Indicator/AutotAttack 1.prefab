@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6594542037625524877}
   - component: {fileID: 6594542037626048513}
   m_Layer: 0
-  m_Name: AutotAttack
+  m_Name: AutotAttack 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,4 +66,4 @@ Projector:
   m_Material: {fileID: 2100000, guid: c8bdd1e0c6ae80341a27d1f9162f86fc, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 32311

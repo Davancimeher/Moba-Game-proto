@@ -773,6 +773,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 4710740059068964236, guid: fe5c82ffce72ebe458eaec8a173461c7,
+        type: 3}
+      propertyPath: m_IgnoreLayers.m_Bits
+      value: 32311
+      objectReference: {fileID: 0}
     - target: {fileID: 4710740059080782102, guid: fe5c82ffce72ebe458eaec8a173461c7,
         type: 3}
       propertyPath: m_IsActive
@@ -782,6 +787,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710740059085982559, guid: fe5c82ffce72ebe458eaec8a173461c7,
+        type: 3}
+      propertyPath: m_IgnoreLayers.m_Bits
+      value: 32311
       objectReference: {fileID: 0}
     - target: {fileID: 4710740059097245637, guid: fe5c82ffce72ebe458eaec8a173461c7,
         type: 3}
@@ -793,6 +803,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 4710740059613333371, guid: fe5c82ffce72ebe458eaec8a173461c7,
+        type: 3}
+      propertyPath: m_IgnoreLayers.m_Bits
+      value: 32311
+      objectReference: {fileID: 0}
     - target: {fileID: 4710740059618339809, guid: fe5c82ffce72ebe458eaec8a173461c7,
         type: 3}
       propertyPath: m_IsActive
@@ -802,6 +817,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710740060283156551, guid: fe5c82ffce72ebe458eaec8a173461c7,
+        type: 3}
+      propertyPath: m_IgnoreLayers.m_Bits
+      value: 32311
       objectReference: {fileID: 0}
     - target: {fileID: 4710740060284730059, guid: fe5c82ffce72ebe458eaec8a173461c7,
         type: 3}
@@ -811,12 +831,17 @@ PrefabInstance:
     - target: {fileID: 4710740060290766045, guid: fe5c82ffce72ebe458eaec8a173461c7,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4710740060290766045, guid: fe5c82ffce72ebe458eaec8a173461c7,
         type: 3}
       propertyPath: m_Layer
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710740060687521635, guid: fe5c82ffce72ebe458eaec8a173461c7,
+        type: 3}
+      propertyPath: m_IgnoreLayers.m_Bits
+      value: 32311
       objectReference: {fileID: 0}
     - target: {fileID: 4710740060693019641, guid: fe5c82ffce72ebe458eaec8a173461c7,
         type: 3}
@@ -827,6 +852,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710740060900190629, guid: fe5c82ffce72ebe458eaec8a173461c7,
+        type: 3}
+      propertyPath: m_IgnoreLayers.m_Bits
+      value: 32311
       objectReference: {fileID: 0}
     - target: {fileID: 4710740060907767103, guid: fe5c82ffce72ebe458eaec8a173461c7,
         type: 3}
@@ -6910,7 +6940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 14a74228911217841899a861b82842a5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -88.350555
+      value: -86.66
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 14a74228911217841899a861b82842a5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6918,7 +6948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 14a74228911217841899a861b82842a5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.9664936
+      value: 1.97
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 14a74228911217841899a861b82842a5, type: 3}
       propertyPath: m_LocalRotation.x

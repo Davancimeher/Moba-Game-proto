@@ -136,7 +136,7 @@ Projector:
   m_Material: {fileID: 2100000, guid: 1c2098f79a9cc9a4c95e3f920b4a3728, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 32311
 --- !u!1 &3625208139910526179
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +187,7 @@ Projector:
   m_Material: {fileID: 2100000, guid: cdaae274ec0f8f644933402f7486957b, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 32311
 --- !u!114 &1257005133269034853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +250,7 @@ Projector:
   m_Material: {fileID: 2100000, guid: 32a0c60323b6d5945afb56d2a3f3f3c7, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 32311
 --- !u!1 &6633491107732619084
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,7 +300,7 @@ Projector:
   m_Material: {fileID: 2100000, guid: 7dc498cb0f03f8b49b46a48e9f86224a, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 32311
 --- !u!1 &9130787513220005232
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,4 +350,4 @@ Projector:
   m_Material: {fileID: 2100000, guid: 38322027f63884249b99d6b7fb1abe46, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 32311
