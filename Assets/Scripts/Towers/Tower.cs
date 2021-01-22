@@ -37,7 +37,10 @@ public class Tower : MonoBehaviour
         if (PhotonNetwork.IsMasterClient)
             StartAttacking();
     }
-
+    public void StopTower()
+    {
+        StopAttacking();
+    }
     private void OnTriggerEnter(Collider other)
     {
         var towerTarget = other.GetComponent<TowerTarget>();
@@ -179,6 +182,10 @@ public class Tower : MonoBehaviour
     {
         StartCoroutine(AttackingCoroutine());
     }
+    public void StopAttacking()
+    {
+        StopCoroutine(AttackingCoroutine());
+    }
     public void UpdateAttackingTarget()
     {
         if (m_ActualTarget != null) return;
@@ -186,7 +193,8 @@ public class Tower : MonoBehaviour
     }
     public IEnumerator AttackingCoroutine()
     {
-        while (m_TowerState != TowerState.DESTROYED)
+
+        while (m_TowerState != TowerState.DESTROYED && PhotonNetwork.IsMasterClient)
         {
             if (m_ActualTarget != null)
             {
@@ -207,8 +215,9 @@ public class Tower : MonoBehaviour
 
     public void ExecuteRPCTowerAttack(int _towerTargetViewId, byte TowerTargetType)
     {
-        m_TowerPhotonView.RPC("RPC_TowerAttack", RpcTarget.AllViaServer, _towerTargetViewId, TowerTargetType);
-       // PhotonNetwork.SendAllOutgoingCommands();
+        if (PhotonNetwork.IsMasterClient)
+            m_TowerPhotonView.RPC("RPC_TowerAttack", RpcTarget.AllViaServer, _towerTargetViewId, TowerTargetType);
+        // PhotonNetwork.SendAllOutgoingCommands();
     }
 
     [PunRPC]
@@ -243,7 +252,7 @@ public class Tower : MonoBehaviour
         Debug.LogError("ExecuteRPCAddPriorityTarget");
 
         m_TowerPhotonView.RPC("RPC_AddPriorityTarget", RpcTarget.AllViaServer, _towerTargetViewId);
-    }   
+    }
 
     [PunRPC]
     public void RPC_AddPriorityTarget(int _towerTargetViewId)

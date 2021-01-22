@@ -130,4 +130,11 @@ public class InGameManager : MonoBehaviour
             tower.InitTower();
         }
     }
+    public void StopTowers()
+    {
+        foreach (var tower in m_Towers)
+        {
+            tower.InitTower();
+        }
+    }
 }
