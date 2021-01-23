@@ -23,6 +23,8 @@ public class InGameManager : MonoBehaviour
 
     public List<Transform> SpawnPointsTeam1 = new List<Transform>();
     public List<Transform> SpawnPointsTeam2 = new List<Transform>();
+    public Transform Team1MinionsSpawnPoint;
+    public Transform Team2MinionsSpawnPoint;
 
     [Header("Attacks UI")]
 

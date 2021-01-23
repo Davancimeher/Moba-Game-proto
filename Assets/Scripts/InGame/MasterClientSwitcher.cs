@@ -21,7 +21,6 @@ public class MasterClientSwitcher : MonoBehaviour
     
     private void OnApplicationPause(bool pauseStatus)
     {
-        Debug.Log("OnApplicationPause");
         if (pauseStatus)
         {
             if (PhotonNetwork.IsConnected && PhotonNetwork.InRoom && PhotonNetwork.IsMasterClient)
@@ -91,7 +90,6 @@ public class MasterClientSwitcher : MonoBehaviour
         {
             m_Ping = PhotonNetwork.GetPing();
             SetPing();
-            Debug.Log("Get Ping");
             yield return new WaitForSeconds(5f);
         }
     }
@@ -110,7 +108,6 @@ public class MasterClientSwitcher : MonoBehaviour
                     if (ping < lowestPing)
                     {
                         lowestPing = ping;
-                        Debug.Log("Get best player with ping ! ");
                         NextMaster = playerPair.Value;
                     }
                 }

@@ -52,6 +52,7 @@ GameObject:
   - component: {fileID: 690319804059102674}
   - component: {fileID: 3450386256743662124}
   - component: {fileID: 6569129198398764428}
+  - component: {fileID: 951585992146493847}
   m_Layer: 11
   m_Name: Barbarian
   m_TagString: Untagged
@@ -367,6 +368,22 @@ MonoBehaviour:
   HealthManager: {fileID: 0}
   teamIndex: 0
   ViewID: 0
+--- !u!208 &951585992146493847
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148302276946099737}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 1.73, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1.37, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &3061992113360788040
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,15 +997,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2661598069636541539}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2661598069636689467 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 148056, guid: b545ad297bafdfb4c8f54415336289e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 2661598069636541539}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2661598069636374701 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 494798, guid: b545ad297bafdfb4c8f54415336289e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2661598069636541539}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2661598069636689467 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 148056, guid: b545ad297bafdfb4c8f54415336289e4,
     type: 3}
   m_PrefabInstance: {fileID: 2661598069636541539}
   m_PrefabAsset: {fileID: 0}
