@@ -31,7 +31,6 @@ public class MasterClientSwitcher : MonoBehaviour
                 //PhotonNetwork.BackgroundTimeout = 2f;                                                
                 ChangeMasterClientifAvailble();
                 PhotonNetwork.SendAllOutgoingCommands();
-
             }
         }
         else
@@ -40,6 +39,10 @@ public class MasterClientSwitcher : MonoBehaviour
             if (PhotonNetwork.IsConnected && PhotonNetwork.InRoom && PhotonNetwork.IsMasterClient)
             {
                 // do whatever you want . if you not reach time to live player then you are connected and inroom already.
+            }
+            else
+            {
+                PhotonNetwork.ReconnectAndRejoin();
             }
 
             //check if game end ||room destroyed ||timeout

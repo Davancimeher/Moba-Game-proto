@@ -11,6 +11,7 @@ using UnityEngine.UI;
 
 public class InGameManager : MonoBehaviour
 {
+    public bool m_InGameScene;  
     public PhotonView m_MasterPhotonView;
     public static InGameManager IGM;
     public GameObject MyChampion;

@@ -99,8 +99,8 @@ public class MatchMakingManager : MonoBehaviour, IMatchmakingCallbacks, ILobbyCa
             IsVisible = true,
             IsOpen = true,
             MaxPlayers = maxPlayers,
-            PlayerTtl = 1,
-            EmptyRoomTtl = 5,
+            PlayerTtl = 60000,
+            EmptyRoomTtl = 10000,
             CustomRoomProperties = Costume,
             CleanupCacheOnLeave = true
         };

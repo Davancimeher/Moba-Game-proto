@@ -3,14 +3,20 @@ using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class ConnectionManager : MonoBehaviour, IConnectionCallbacks
 {
+    public bool InGameScene;
+
     private void OnEnable()
     {
+        SceneManager.sceneLoaded += OnSceneFinishedLoading;
         PhotonNetwork.AddCallbackTarget(this);
     }
     private void OnDisable()
     {
+        SceneManager.sceneLoaded -= OnSceneFinishedLoading;
         PhotonNetwork.RemoveCallbackTarget(this);
     }
     private void Start()
@@ -66,6 +72,12 @@ public class ConnectionManager : MonoBehaviour, IConnectionCallbacks
     {
 
     }
+    private void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.buildIndex == 1)
+        {
+            InGameManager.IGM.m_InGameScene = true;
+        }
+    }
     #endregion
-
 }
