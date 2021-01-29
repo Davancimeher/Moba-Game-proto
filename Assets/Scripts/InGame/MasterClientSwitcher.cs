@@ -75,6 +75,16 @@ public class MasterClientSwitcher : MonoBehaviour
 
     public void SetPing()
     {
+        if(m_Ping > 400)
+        {
+            InGameManager.IGM.ShowDisconnectionPingPanel();
+            Time.timeScale = 0;
+        }
+        else
+        {
+            InGameManager.IGM.HideDisconnectionPingPanel();
+            Time.timeScale = 1;
+        }
         if (m_Ping != LastPingSended)
         {
             PingCustomes["Ping"] = m_Ping;

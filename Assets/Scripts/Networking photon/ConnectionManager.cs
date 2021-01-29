@@ -32,10 +32,24 @@ public class ConnectionManager : MonoBehaviour, IConnectionCallbacks
             PhotonNetwork.ConnectUsingSettings();
         }
     }
+    public void ReconnectAndJoin()
+    {
+        if (!PhotonNetwork.IsConnected)
+        {
+            PhotonNetwork.ReconnectAndRejoin();
+        }
+    }
+
     private void OnPlayerConnected()
     {
         UIManager.UIM.ChangeStartButtonState(true);
         Debug.Log("Player Connected");
+
+        if (InGameManager.IGM != null)
+            if (InGameManager.IGM.m_InGameScene)
+            {
+                InGameManager.IGM.HideDisconnectionInternetPanel();
+            }
     }
 
     #region Photon CallBacks Region
@@ -66,6 +80,11 @@ public class ConnectionManager : MonoBehaviour, IConnectionCallbacks
     {
         PlayerState.m_Instance.OverrideState(State.DISCONECTED);
         Debug.LogError("Disconnected");
+        if (InGameManager.IGM != null)
+            if (InGameManager.IGM.m_InGameScene)
+            {
+                InGameManager.IGM.ShowDisconnectionInternetPanel();
+            }
     }
 
     public void OnRegionListReceived(RegionHandler regionHandler)

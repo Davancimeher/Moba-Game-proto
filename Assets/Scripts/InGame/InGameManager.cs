@@ -11,7 +11,11 @@ using UnityEngine.UI;
 
 public class InGameManager : MonoBehaviour
 {
-    public bool m_InGameScene;  
+    [HideInInspector] public bool m_InGameScene;
+    public ConnectionManager m_ConnectionManager;   
+    public GameObject m_DisconnectionFromPingPanel;
+    public GameObject m_DisconnectionFromInternetPanel;
+
     public PhotonView m_MasterPhotonView;
     public static InGameManager IGM;
     public GameObject MyChampion;
@@ -84,6 +88,10 @@ public class InGameManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneFinishedLoading;
         PhotonNetwork.RemoveCallbackTarget(this);
     }
+    private void Start()
+    {
+        m_ConnectionManager = GameObject.FindObjectOfType<ConnectionManager>();
+    }
     private void SpawnChampion()
     {
         Hero myHero = RoomData.RD.MyHero;
@@ -114,7 +122,7 @@ public class InGameManager : MonoBehaviour
 
         m_MyChampionManager.m_LagPlayerSync.SpawnPosition = myPlayerPosition;
 
-       //  m_CameraController.SetUpCamera(MyChampion.transform);
+        //  m_CameraController.SetUpCamera(MyChampion.transform);
         m_Camera.Follow = MyChampion.transform;
 
     }
@@ -139,5 +147,43 @@ public class InGameManager : MonoBehaviour
         {
             tower.InitTower();
         }
+    }
+
+    public void ShowDisconnectionPingPanel()
+    {
+        if (!m_DisconnectionFromPingPanel.activeSelf)
+        {
+            m_DisconnectionFromPingPanel.SetActive(true);
+            PlayerHUDCanvas.SetActive(false);
+            JoystickCanvas.SetActive(false);
+        }
+    }
+    public void HideDisconnectionPingPanel()
+    {   
+        if (m_DisconnectionFromPingPanel.activeSelf)
+        {
+            m_DisconnectionFromPingPanel.SetActive(false);
+            PlayerHUDCanvas.SetActive(true);
+            JoystickCanvas.SetActive(true);
+        }
+    }
+
+    public void ShowDisconnectionInternetPanel()
+    {
+        if (!m_DisconnectionFromInternetPanel.activeSelf)
+            m_DisconnectionFromInternetPanel.SetActive(true);
+    }
+    public void HideDisconnectionInternetPanel()
+    {
+        if (m_DisconnectionFromInternetPanel.activeSelf)
+            m_DisconnectionFromInternetPanel.SetActive(true);
+    }
+    public void ReconnectOnJoin()
+    {
+        m_ConnectionManager.ReconnectAndJoin();
+    }
+    public void Disconnet()
+    {
+        PhotonNetwork.Disconnect();
     }
 }
