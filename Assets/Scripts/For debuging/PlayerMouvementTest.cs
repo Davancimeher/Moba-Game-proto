@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerMouvementTest : MonoBehaviour
 {
+    public PlayerControllerAttack PlayerControllerAttack;
     public CharacterController controller;
     public Animator animator;
     public PhotonView m_MyphotonView;
@@ -41,6 +42,7 @@ public class PlayerMouvementTest : MonoBehaviour
 
         if (direction.magnitude >= 0.5f)
         {
+            PlayerControllerAttack.attackInputs.Clear();
             targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
 
             angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);

@@ -6,83 +6,104 @@ public class PlayerControllerAttack : MonoBehaviour
 {
     public Animator Animator;
     public bool inAttack = false;
+
+    public GameObject fx1;
     public GameObject fx3;
-    public GameObject fx2;  
+    public GameObject fx2;
 
-    private Transform fxParent;
-    private Vector3 fxPosition;
-    private Vector3 fxScale;
-    private Quaternion fxRotation;
-    private GameObject fxholder;
+    public Queue<AttackInput> attackInputs = new Queue<AttackInput>();
 
-    private int lastAttack;
-
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            if(!inAttack)
-            Animator.SetTrigger("Attack1");
+            if (inAttack)
+            {
+                AttackInput attackInput = new AttackInput("Attack1");
+                attackInputs.Enqueue(attackInput);
+            }
+            else
+            {
+                AttackInput attackInput = new AttackInput("Attack1");
+                ExecuteAttaque(attackInput);
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Z))
         {
-            if (!inAttack)
+            if (inAttack)
             {
-                SaveTransform(fx2);
-                Animator.SetTrigger("Attack2");
-
+                AttackInput attackInput = new AttackInput("Attack2");
+                attackInputs.Enqueue(attackInput);
+            }
+            else
+            {
+                AttackInput attackInput = new AttackInput("Attack2");
+                ExecuteAttaque(attackInput);
             }
         }
         else if (Input.GetKeyDown(KeyCode.E))
         {
-            if (!inAttack)
+            if (inAttack)
             {
-                SaveTransform(fx3);
-                Animator.SetTrigger("Attack3");
+                AttackInput attackInput = new AttackInput("Attack3");
+                attackInputs.Enqueue(attackInput);
+            }
+            else
+            {
+                AttackInput attackInput = new AttackInput("Attack3");
+                ExecuteAttaque(attackInput);
             }
         }
     }
-
-    private void SaveTransform(GameObject fx)
-    {
-        fxParent = fx.transform.parent;
-        fxPosition = fx.transform.localPosition;
-        fxRotation = fx.transform.localRotation;
-        fxScale = fx.transform.localScale;
-    }
-   
     public void ShowFx(int id)
     {
-        lastAttack = id;
-        if (id == 2)
+        if (id == 1)
+        {
+            fx1.SetActive(true);
+        }
+        else if (id == 2)
         {
             fx2.SetActive(true);
-            fx2.transform.parent = null;
         }
         else
         {
             fx3.SetActive(true);
-            fx3.transform.parent = null;
         }
     }
 
-    public void ResetParent()
+    public void GetNextAttaque()
     {
-        if(lastAttack == 2)
-        {
-            fx2.transform.SetParent(fxParent, false);
+        if (attackInputs.Count > 0)
+            ExecuteAttaque(attackInputs.Dequeue());
+    }
 
-            fx2.transform.localPosition = fxPosition;
-            fx2.transform.localRotation = fxRotation;
-            fx2.transform.localScale = fxScale;
-        }
-        else
-        {
-            fx3.transform.SetParent(fxParent, false);
+    public void ExecuteAttaque(AttackInput attackInput)
+    {
+        Animator.SetTrigger(attackInput.AnimatorIndex);
+    }
+}
 
-            fx3.transform.localPosition = fxPosition;
-            fx3.transform.localRotation = fxRotation;
-            fx3.transform.localScale = fxScale;
-        }
+internal class CustomTransform : MonoBehaviour
+{
+    public Transform m_Parent;
+    public Vector3 m_LocalPosition;
+    public Quaternion m_LocalRotation;
+    public Vector3 m_LocalScale;
+
+    public CustomTransform(Transform _transform)
+    {
+        m_Parent = _transform.parent;
+        m_LocalPosition = _transform.localPosition;
+        m_LocalRotation = _transform.localRotation;
+        m_LocalScale = _transform.localScale;
+    }
+}
+public class AttackInput : MonoBehaviour
+{
+    public string AnimatorIndex;
+
+    public AttackInput(string animatorIndex)
+    {
+        AnimatorIndex = animatorIndex;
     }
 }

@@ -20,5 +20,6 @@ public class AttackBehaviourTest : StateMachineBehaviour
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _PlayerControllerAttack.inAttack = false;
+        _PlayerControllerAttack.GetNextAttaque();
     }
 }

@@ -6,23 +6,34 @@ public class DisactivateFXByTime : MonoBehaviour
 {
     public float FXTime;
     private float time;
-    public Transform Parent;
-    public PlayerControllerAttack test;
+    private CustomTransform MyCustomTransform = null;
 
-    void OnEnable()
+    private void OnEnable()
     {
+        if (MyCustomTransform == null) MyCustomTransform = new CustomTransform(transform);
+
+        transform.parent = null;
         time = FXTime;
         StartCoroutine(fxTime());
     }
-    IEnumerator fxTime()
+
+    private IEnumerator fxTime()
     {
         while (time > 0)
         {
             time -= Time.deltaTime;
             yield return null;
         }
-        this.Parent.gameObject.SetActive(false);
-        test.ResetParent();
+        ResetParent();
         yield return null;
+    }
+
+    private void ResetParent()
+    {
+        gameObject.SetActive(false);
+        transform.SetParent(MyCustomTransform.m_Parent, false);
+        transform.localPosition = MyCustomTransform.m_LocalPosition;
+        transform.localRotation = MyCustomTransform.m_LocalRotation;
+        transform.localScale = MyCustomTransform.m_LocalScale;
     }
 }
