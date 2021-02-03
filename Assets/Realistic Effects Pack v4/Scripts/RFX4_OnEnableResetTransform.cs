@@ -14,14 +14,14 @@ public class RFX4_OnEnableResetTransform : MonoBehaviour {
         {
             isInitialized = true;
             t = transform;
-            startPosition = t.position;
-            startRotation = t.rotation;
+            startPosition = t.localPosition;
+            startRotation = t.localRotation;
             startScale = t.localScale;
         }
         else
         {
-            t.position = startPosition;
-            t.rotation = startRotation;
+            t.localPosition = startPosition;
+            t.localRotation = startRotation;
             t.localScale = startScale;
         }
 	}
@@ -32,14 +32,14 @@ public class RFX4_OnEnableResetTransform : MonoBehaviour {
         {
             isInitialized = true;
             t = transform;
-            startPosition = t.position;
-            startRotation = t.rotation;
+            startPosition = t.localPosition;
+            startRotation = t.localRotation;
             startScale = t.localScale;
         }
         else
         {
-            t.position = startPosition;
-            t.rotation = startRotation;
+            t.localPosition = startPosition;
+            t.localRotation = startRotation;
             t.localScale = startScale;
         }
     }

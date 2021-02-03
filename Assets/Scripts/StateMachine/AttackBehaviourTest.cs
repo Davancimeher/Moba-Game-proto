@@ -11,8 +11,6 @@ public class AttackBehaviourTest : StateMachineBehaviour
     {
         _PlayerControllerAttack = animator.gameObject.GetComponent<PlayerControllerAttack>();
         _PlayerControllerAttack.inAttack = true;
-        fxStartPosition= _PlayerControllerAttack.fx.transform.position;
-        fxstartRotation = _PlayerControllerAttack.fx.transform.rotation;
     }
    
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
