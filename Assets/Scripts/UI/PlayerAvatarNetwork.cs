@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PlayerAvatarNetwork : MonoBehaviour
 {
-    public TextMeshProUGUI m_PlayerNameText;
+    //public TextMeshProUGUI m_PlayerNameText;
     public TextMeshProUGUI m_AvatarIdText;
     public Image m_AvatarImage;
     public Image m_HeroImage;
@@ -17,12 +17,12 @@ public class PlayerAvatarNetwork : MonoBehaviour
     {
         if (m_Player == null) m_Player = player;
 
-        m_PlayerNameText.text = player.NickName;
+        //m_PlayerNameText.text = player.NickName;
         var avatarId = (byte)player.CustomProperties[GlobalVariables.m_AvatarPlayerCostumes];
 
         if (GameDataManager.GDM.m_AvatarsDict.ContainsKey(avatarId))
         {
-            m_AvatarImage.sprite = GameDataManager.GDM.m_AvatarsDict[avatarId].AvatarSprite;
+            //m_AvatarImage.sprite = GameDataManager.GDM.m_AvatarsDict[avatarId].AvatarSprite;
             m_AvatarImage.color = Color.white;
         }
     }
@@ -39,21 +39,21 @@ public class PlayerAvatarNetwork : MonoBehaviour
     {
         if (m_Player == null) m_Player = player;
 
-        m_PlayerNameText.text = player.NickName;
+        //m_PlayerNameText.text = player.NickName;
         var avatarId = (byte)player.CustomProperties[GlobalVariables.m_AvatarPlayerCostumes];
         var heroId = (byte)player.CustomProperties[GlobalVariables.m_HeroPlayerCostumes];
         m_HeroImage.gameObject.SetActive(true);
 
         if (GameDataManager.GDM.m_AvatarsDict.ContainsKey(avatarId))
         {
-            m_HeroImage.sprite = GameDataManager.GDM.m_AvatarsDict[avatarId].AvatarSprite;
+            //m_HeroImage.sprite = GameDataManager.GDM.m_AvatarsDict[avatarId].AvatarSprite;
             m_HeroImage.color = Color.white;
 
         }
 
         if (GameDataManager.GDM.m_HerosDict.ContainsKey(heroId))
         {
-            m_AvatarImage.sprite = GameDataManager.GDM.m_HerosDict[heroId].HeroSprite;
+            //m_AvatarImage.sprite = GameDataManager.GDM.m_HerosDict[heroId].HeroSprite;
             m_AvatarImage.color = Color.white;
         }
         m_WaitingAnimation.SetActive(true);

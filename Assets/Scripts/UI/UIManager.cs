@@ -55,7 +55,7 @@ public class UIManager : MonoBehaviour
     public GameObject m_PlayersTeamPrefab;
     public Transform m_TeamLayoutGroup;
 
-    [Header("Lock Hero Button")]    
+    [Header("Lock Hero Button")]
     public Button m_LockHeroButton;
 
     [Header("Loading")]
@@ -70,7 +70,7 @@ public class UIManager : MonoBehaviour
     [Header("Load Scene Network")]
     public GameObject m_PlayerNetworkPrefab;
     public Transform m_PlayerNetworkPrefabsParent;
-        
+
     private int MyPing;
     private int timeInMatchMaking = 0;
 
@@ -95,7 +95,7 @@ public class UIManager : MonoBehaviour
     {
         m_startButton.interactable = state;
     }
-   
+
     public void StartMatchMakingTime()
     {
         PlayerState.m_Instance.OverrideState(State.INLOBBY);
@@ -292,7 +292,7 @@ public class UIManager : MonoBehaviour
         foreach (var player in players)
         {
             GameObject playerTeamUIObj = Instantiate(m_PlayersTeamPrefab, m_TeamLayoutGroup);
-            
+
             PlayerTeamsHandler playerTeamUI = playerTeamUIObj.GetComponent<PlayerTeamsHandler>();
             playerTeamUI.Init(player);
         }
@@ -302,7 +302,7 @@ public class UIManager : MonoBehaviour
         foreach (var heroUI in GameDataManager.GDM.m_HeroHandlers.Values)
         {
             heroUI.m_HeroButton.interactable = true;
-        }   
+        }
     }
 
     //lock button
@@ -314,6 +314,7 @@ public class UIManager : MonoBehaviour
     }
     public void PanelManaging(State state)
     {
+        Debug.Log("State " + state);
         switch (state)
         {
             case State.DISCONECTED:
@@ -332,10 +333,10 @@ public class UIManager : MonoBehaviour
                 break;
             case State.INLOBBY:
                 ShowMatchMakingPanel();
-                HideMainPanel();
-                HideReadyPanel();
-                HideHeroPanel();
-                HideLoadingPanel();
+                //HideMainPanel();
+                //HideReadyPanel();
+                //HideHeroPanel();
+                //HideLoadingPanel();
 
                 break;
             case State.IN_READY_PANEL:
@@ -353,7 +354,7 @@ public class UIManager : MonoBehaviour
                 HideReadyPanel();
                 HideLoadingPanel();
                 break;
-            case State.IN_LOADING_PANEL:    
+            case State.IN_LOADING_PANEL:
                 ShowLoadingPanel();
                 HideHeroPanel();
                 HideMainPanel();

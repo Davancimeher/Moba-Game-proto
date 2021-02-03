@@ -28,7 +28,7 @@ public class MatchMakingManager : MonoBehaviour, IMatchmakingCallbacks, ILobbyCa
     public void InitMatchMakingDropdown()
     {
         UIManager.UIM.m_MacthmakingDropDown.AddOptions(LobbysList);
-        UIManager.UIM.m_MacthmakingDropDownLabes.text = "MatchMaking type"; 
+        UIManager.UIM.m_MacthmakingDropDownLabes.text = "MatchMaking type";
     }
 
     public void MatchmakingDropDownChanged(TMP_Dropdown change)
@@ -77,7 +77,7 @@ public class MatchMakingManager : MonoBehaviour, IMatchmakingCallbacks, ILobbyCa
     {
         ExitGames.Client.Photon.Hashtable Costume = new ExitGames.Client.Photon.Hashtable();
         // Costume.Add("Time", 20);
-        byte maxPlayers=0;
+        byte maxPlayers = 0;
 
         switch (m_Lobbys)
         {
