@@ -128,12 +128,12 @@ public class GameDataManager : MonoBehaviour
     private void SetSelectedAvatar(AvatarUIHandler _avatarUI)
     {
         if (SelectedAvatar != null)
-            m_AvatarsHandlers[SelectedAvatar.m_Avatar.ID].m_AvatarImage.color = Color.white;
+            m_AvatarsHandlers[SelectedAvatar.m_Avatar.ID].SetSelected(false);
 
         if (m_AvatarsHandlers.ContainsKey(_avatarUI.m_Avatar.ID))
         {
             SelectedAvatar = m_AvatarsHandlers[_avatarUI.m_Avatar.ID];
-            SelectedAvatar.m_AvatarImage.color = Color.green;
+            SelectedAvatar.SetSelected(true);
         }
     }
 

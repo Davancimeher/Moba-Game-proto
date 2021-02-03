@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class AvatarUIHandler : MonoBehaviour
+public class AvatarUIHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [HideInInspector] public Avatar m_Avatar;
 
     public TextMeshProUGUI m_AvatarIdText;
     public Button m_avatarButton;
     public Image m_AvatarImage;
+    public Image m_AvatarImageHover;
+    public Image m_AvatarImageSelected;
 
     public void Init(Avatar _avatar)
     {
@@ -21,5 +24,20 @@ public class AvatarUIHandler : MonoBehaviour
         m_avatarButton.onClick.AddListener(() => GameDataManager.GDM.OnClickAvatarButton(m_Avatar));
         if (!GameDataManager.GDM.m_AvatarsHandlers.ContainsKey(_avatar.ID))
             GameDataManager.GDM.m_AvatarsHandlers.Add(_avatar.ID, this);
+    }
+
+    public void SetSelected(bool value)
+    {
+        m_AvatarImageSelected.gameObject.SetActive(value);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        m_AvatarImageHover.gameObject.SetActive(true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        m_AvatarImageHover.gameObject.SetActive(false);
     }
 }
