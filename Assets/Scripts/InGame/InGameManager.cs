@@ -12,7 +12,7 @@ using UnityEngine.UI;
 public class InGameManager : MonoBehaviour
 {
     [HideInInspector] public bool m_InGameScene;
-    public ConnectionManager m_ConnectionManager;   
+    public ConnectionManager m_ConnectionManager;
     public GameObject m_DisconnectionFromPingPanel;
     public GameObject m_DisconnectionFromInternetPanel;
 
@@ -36,6 +36,13 @@ public class InGameManager : MonoBehaviour
     public GameObject m_Attack1Object;
     public GameObject m_Attack2Object;
     public GameObject m_Attack3Object;
+
+    [Header("Attacks UI Cooldown")]
+
+    public GameObject m_AutoAttackObjectCooldown;
+    public GameObject m_Attack1ObjectCooldown;
+    public GameObject m_Attack2ObjectCooldown;
+    public GameObject m_Attack3ObjectCooldown;
 
     public GameObject m_CancelButton;
 
@@ -118,7 +125,7 @@ public class InGameManager : MonoBehaviour
 
         m_MyChampionManager = MyChampion.GetComponent<ChampionManager>();
 
-        m_MyChampionManager.InitChampionManager(myHero, m_AutoAttackObject, m_Attack1Object, m_Attack2Object, m_Attack3Object, m_CancelButton, m_RecallSpellObject);
+        m_MyChampionManager.InitChampionManager(myHero, m_AutoAttackObject, m_Attack1Object, m_Attack2Object, m_Attack3Object, m_AutoAttackObjectCooldown, m_Attack1ObjectCooldown, m_Attack2ObjectCooldown, m_Attack3ObjectCooldown, m_CancelButton, m_RecallSpellObject);
 
         m_MyChampionManager.m_LagPlayerSync.SpawnPosition = myPlayerPosition;
 
@@ -159,7 +166,7 @@ public class InGameManager : MonoBehaviour
         }
     }
     public void HideDisconnectionPingPanel()
-    {   
+    {
         if (m_DisconnectionFromPingPanel.activeSelf)
         {
             m_DisconnectionFromPingPanel.SetActive(false);
