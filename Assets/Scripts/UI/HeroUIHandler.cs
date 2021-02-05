@@ -10,6 +10,7 @@ public class HeroUIHandler : MonoBehaviour
 
     public Button m_HeroButton;
     public Image m_HeroImage;
+    public Image m_HeroSelected;
 
     public void Init(Hero _hero)
     {

@@ -7,6 +7,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 public class UIManager : MonoBehaviour
 {
     public static UIManager UIM;
@@ -55,11 +56,19 @@ public class UIManager : MonoBehaviour
     public GameObject m_PlayersTeamPrefab;
     public Transform m_TeamLayoutGroup;
 
-    [Header("Lock Hero Button")]    
+    [Header("Lock Hero Button")]
     public Button m_LockHeroButton;
 
     [Header("Loading")]
     public TextMeshProUGUI m_LoadingProgressText;
+
+    [Header("Ready Panel Controller")]
+    public Image ReadyCountdownFillAmount;
+    [HideInInspector] public Tweener ReadyCountdownFillAmountTween = null;
+
+    [Header("ChooseHero Panel Controller")]
+    public Image ChooseHeroCountdownFillAmount;
+    [HideInInspector] public Tweener ChooseHeroCountdownFillAmountTween = null;
 
     [Header("Profil")]
     public GameObject m_ProfilCanvas;
@@ -70,7 +79,11 @@ public class UIManager : MonoBehaviour
     [Header("Load Scene Network")]
     public GameObject m_PlayerNetworkPrefab;
     public Transform m_PlayerNetworkPrefabsParent;
-        
+    public TextMeshProUGUI NbrOfPlayersText;
+    private string NbrOfPlayersMax;
+    private int NbrOfPlayersLoaded =0;
+
+
     private int MyPing;
     private int timeInMatchMaking = 0;
 
@@ -95,7 +108,7 @@ public class UIManager : MonoBehaviour
     {
         m_startButton.interactable = state;
     }
-   
+
     public void StartMatchMakingTime()
     {
         PlayerState.m_Instance.OverrideState(State.INLOBBY);
@@ -179,6 +192,12 @@ public class UIManager : MonoBehaviour
         if (m_ReadyPanel.activeSelf)
         {
             m_ReadyPanel.SetActive(false);
+
+            //Reset ReadyCountdown for the next queue
+            m_ReadyCountDownText.text = "";
+            ReadyCountdownFillAmount.fillAmount = 1;
+            ReadyCountdownFillAmountTween.Kill();
+            ReadyCountdownFillAmountTween = null;
         }
     }
 
@@ -203,6 +222,12 @@ public class UIManager : MonoBehaviour
         if (m_HeroPanel.activeSelf)
         {
             m_HeroPanel.SetActive(false);
+
+            //Reset ReadyCountdown for the next queue
+            m_ChooseHeroCountDownText.text = "";
+            ChooseHeroCountdownFillAmount.fillAmount = 1;
+            ChooseHeroCountdownFillAmountTween.Kill();
+            ChooseHeroCountdownFillAmountTween = null;
         }
         if (m_HeroInvorinement.activeSelf)
         {
@@ -230,16 +255,28 @@ public class UIManager : MonoBehaviour
     }
     public void UpdateReadyCountdownUI(int time_S)
     {
-        string minutes = (time_S / 60).ToString("0");
+        //string minutes = (time_S / 60).ToString("0");
         string seconds = (time_S % 60).ToString("00");
-        m_ReadyCountDownText.text = $"{minutes}:{seconds}";
+        m_ReadyCountDownText.text = seconds;
     }
+
+    public void StartReadyCountdownUI(int time_S)
+    {
+        ReadyCountdownFillAmountTween = ReadyCountdownFillAmount.DOFillAmount(0, time_S).SetEase(Ease.Linear);
+    }
+
     public void UpdateChooseHeroCountdownUI(int time_S)
     {
         string minutes = (time_S / 60).ToString("0");
         string seconds = (time_S % 60).ToString("00");
         m_ChooseHeroCountDownText.text = $"{minutes}:{seconds}";
     }
+
+    public void ChooseHeroCountdownUI(int time_S)
+    {
+        ChooseHeroCountdownFillAmountTween = ChooseHeroCountdownFillAmount.DOFillAmount(0, time_S).SetEase(Ease.Linear);
+    }
+
     private IEnumerator MatchMakingTimeCoroutine()
     {
         while (PlayerState.m_Instance.m_State == State.INLOBBY)
@@ -292,7 +329,7 @@ public class UIManager : MonoBehaviour
         foreach (var player in players)
         {
             GameObject playerTeamUIObj = Instantiate(m_PlayersTeamPrefab, m_TeamLayoutGroup);
-            
+
             PlayerTeamsHandler playerTeamUI = playerTeamUIObj.GetComponent<PlayerTeamsHandler>();
             playerTeamUI.Init(player);
         }
@@ -302,7 +339,7 @@ public class UIManager : MonoBehaviour
         foreach (var heroUI in GameDataManager.GDM.m_HeroHandlers.Values)
         {
             heroUI.m_HeroButton.interactable = true;
-        }   
+        }
     }
 
     //lock button
@@ -314,6 +351,7 @@ public class UIManager : MonoBehaviour
     }
     public void PanelManaging(State state)
     {
+        Debug.Log("State " + state);
         switch (state)
         {
             case State.DISCONECTED:
@@ -332,10 +370,10 @@ public class UIManager : MonoBehaviour
                 break;
             case State.INLOBBY:
                 ShowMatchMakingPanel();
-                HideMainPanel();
-                HideReadyPanel();
-                HideHeroPanel();
-                HideLoadingPanel();
+                //HideMainPanel();
+                //HideReadyPanel();
+                //HideHeroPanel();
+                //HideLoadingPanel();
 
                 break;
             case State.IN_READY_PANEL:
@@ -353,7 +391,7 @@ public class UIManager : MonoBehaviour
                 HideReadyPanel();
                 HideLoadingPanel();
                 break;
-            case State.IN_LOADING_PANEL:    
+            case State.IN_LOADING_PANEL:
                 ShowLoadingPanel();
                 HideHeroPanel();
                 HideMainPanel();
@@ -361,5 +399,17 @@ public class UIManager : MonoBehaviour
                 HideReadyPanel();
                 break;
         }
+    }
+
+    public void SetNbrOfPlayersLoadingScreen(int NbPlayers)
+    {
+        NbrOfPlayersMax = NbPlayers.ToString();
+        NbrOfPlayersText.text = $"{NbrOfPlayersLoaded}/{NbrOfPlayersMax}";
+    }
+
+    public void SetPlayersLoaded()
+    {
+        NbrOfPlayersLoaded++;
+        NbrOfPlayersText.text = $"{NbrOfPlayersLoaded}/{NbrOfPlayersMax}";
     }
 }

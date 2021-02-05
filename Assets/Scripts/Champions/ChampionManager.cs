@@ -34,7 +34,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
     public PlayerMouvement m_PlayerMouvement;
     public SetPlayerInGameInfo m_SetPlayerInGameInfo;
     public SpellManager m_SpellManager;
-    public LagPlayerSync m_LagPlayerSync;   
+    public LagPlayerSync m_LagPlayerSync;
 
     [Header("collisions")]
     public GameObject m_HitObject;
@@ -47,22 +47,26 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
     public Attack m_AutoAttack;
 
     private Image m_AutoAttackImage;
+    private Image m_AutoAttackImageCooldown;
     private Button m_AutoAttackButton;
     private TextMeshProUGUI m_AutoAttackTime;
 
     [Header("Champion Attack 1")]
     public Attack Attack1;
     private Image m_Attack1Image;
+    private Image m_Attack1ImageCooldown;
     private TextMeshProUGUI m_Attack1Time;
 
     [Header("Champion Attack 2")]
     public Attack Attack2;
     private Image m_Attack2Image;
+    private Image m_Attack2ImageCooldown;
     private TextMeshProUGUI m_Attack2Time;
 
     [Header("Champion Attack 3")]
     public Attack Attack3;
     private Image m_Attack3Image;
+    private Image m_Attack3ImageCooldown;
     private TextMeshProUGUI m_Attack3Time;
 
     [Header("Cancel Cast Button")]
@@ -73,7 +77,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
     public GameObject m_RecallFx;
 
     [Header("Champion manager variables")]
-    public Attack m_ActualAttack;   
+    public Attack m_ActualAttack;
 
     private EventTrigger Attack1Event;
     private EventTrigger Attack2Event;
@@ -88,7 +92,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
     private GameObject attack1Indicator;
     private GameObject attack2Indicator;
     private GameObject attack3Indicator;
-    
+
     private bool cancelCast = false;
 
 
@@ -118,7 +122,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
         PhotonNetwork.RemoveCallbackTarget(this);
     }
 
-    public void InitChampionManager(Hero _hero, GameObject autoAttackObject, GameObject attack1Object, GameObject attack2Object, GameObject attack3Object, GameObject cancelButton,Button RecallButton)
+    public void InitChampionManager(Hero _hero, GameObject autoAttackObject, GameObject attack1Object, GameObject attack2Object, GameObject attack3Object, GameObject autoAttackObjectCooldown, GameObject attack1ObjectCooldown, GameObject attack2ObjectCooldown, GameObject attack3ObjectCooldown, GameObject cancelButton, Button RecallButton)
     {
         Application.targetFrameRate = 120;
 
@@ -137,10 +141,10 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
         Attack2 = _hero.Attack2;
         Attack3 = _hero.Attack3;
 
-        InitWithObject(autoAttackObject, ref m_AutoAttackImage, ref m_AutoAttackTime, m_AutoAttack);
-        InitWithObject(attack1Object, ref m_Attack1Image, ref m_Attack1Time, Attack1);
-        InitWithObject(attack2Object, ref m_Attack2Image, ref m_Attack2Time, Attack2);
-        InitWithObject(attack3Object, ref m_Attack3Image, ref m_Attack3Time, Attack3);
+        InitWithObject(autoAttackObject, autoAttackObjectCooldown, ref m_AutoAttackImage, ref m_AutoAttackImageCooldown, ref m_AutoAttackTime, m_AutoAttack);
+        InitWithObject(attack1Object, attack1ObjectCooldown, ref m_Attack1Image, ref m_Attack1ImageCooldown, ref m_Attack1Time, Attack1);
+        InitWithObject(attack2Object, attack2ObjectCooldown, ref m_Attack2Image, ref m_Attack2ImageCooldown, ref m_Attack2Time, Attack2);
+        InitWithObject(attack3Object, attack3ObjectCooldown, ref m_Attack3Image, ref m_Attack3ImageCooldown, ref m_Attack3Time, Attack3);
 
         m_AutoAttackButton = autoAttackObject.GetComponent<Button>();
         m_HealthManager.Health = _hero.Health;
@@ -154,9 +158,10 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
         InitIndicators();
         canAttack = true;
     }
-    private void InitWithObject(GameObject _initObject, ref Image attackImage, ref TextMeshProUGUI attackText, Attack attack)
+    private void InitWithObject(GameObject _initObject, GameObject _initObjectCooldown, ref Image attackImage, ref Image attackImageCooldown, ref TextMeshProUGUI attackText, Attack attack)
     {
         attackImage = _initObject.GetComponent<Image>();
+        attackImageCooldown = _initObjectCooldown.GetComponent<Image>();
         attackText = _initObject.GetComponentInChildren<TextMeshProUGUI>();
         attackImage.sprite = attack.AttackSprite;
     }
@@ -181,7 +186,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
     }
     public void OnClickAutoAttack()
     {
-        if(state != ActualState.DEAD && canAttack)
+        if (state != ActualState.DEAD && canAttack)
         {
             AutoAttackingTime = 1.5f;
             autoAttackIndicator.SetActive(true);
@@ -249,8 +254,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
             if (Attack1Event.isActiveAndEnabled) Attack1Event.enabled = false;
 
             Attack1Rate -= Time.deltaTime;
-            m_Attack1Image.fillAmount = (Attack1.AttackRate - Attack1Rate) / Attack1.AttackRate;
-
+            m_Attack1ImageCooldown.fillAmount = 1-((Attack1.AttackRate - Attack1Rate) / Attack1.AttackRate);
             m_Attack1Time.text = Mathf.RoundToInt(Attack1Rate).ToString();
         }
         else
@@ -260,7 +264,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
             if (!Attack1Event.isActiveAndEnabled)
             {
                 Attack1Event.enabled = true;
-                m_Attack1Image.fillAmount = 1f;
+                m_Attack1ImageCooldown.fillAmount = 0f;
             }
         }
 
@@ -271,7 +275,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
             if (Attack2Event.isActiveAndEnabled) Attack2Event.enabled = false;
 
             Attack2Rate -= Time.deltaTime;
-            m_Attack2Image.fillAmount = (Attack2.AttackRate - Attack2Rate) / Attack2.AttackRate;
+            m_Attack2ImageCooldown.fillAmount = 1-((Attack2.AttackRate - Attack2Rate) / Attack2.AttackRate);
             m_Attack2Time.text = Mathf.RoundToInt(Attack2Rate).ToString();
         }
         else
@@ -281,7 +285,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
             if (!Attack2Event.isActiveAndEnabled)
             {
                 Attack2Event.enabled = true;
-                m_Attack2Image.fillAmount = 1f;
+                m_Attack2ImageCooldown.fillAmount = 0f;
             }
         }
 
@@ -292,7 +296,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
             if (Attack3Event.isActiveAndEnabled) Attack3Event.enabled = false;
 
             Attack3Rate -= Time.deltaTime;
-            m_Attack3Image.fillAmount = (Attack3.AttackRate - Attack3Rate) / Attack3.AttackRate;
+            m_Attack3ImageCooldown.fillAmount = 1-((Attack3.AttackRate - Attack3Rate) / Attack3.AttackRate);
             m_Attack3Time.text = Mathf.RoundToInt(Attack3Rate).ToString();
         }
         else
@@ -301,7 +305,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
             if (!Attack3Event.isActiveAndEnabled)
             {
                 Attack3Event.enabled = true;
-                m_Attack3Image.fillAmount = 1f;
+                m_Attack3ImageCooldown.fillAmount = 0f;
             }
         }
     }
@@ -359,7 +363,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
 
             }
         }
-       
+
     }
     [PunRPC]
     public void RPC_AutoAttackExecution()
@@ -421,7 +425,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
         {
             Attack2Rate = Attack2.AttackRate;
         }
-    }    
+    }
     [PunRPC]
     public void RPC_Attack3Execution()
     {
@@ -451,8 +455,8 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
         m_HitCollider.enabled = false;
         m_SetPlayerInGameInfo.m_ChampionCanvas.SetActive(false);
     }
-   
-    public void SetDead()   
+
+    public void SetDead()
     {
         m_PlayerMouvement.m_isDead = true;
         SetRespawnTimeFromLevel(level);
@@ -505,13 +509,13 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
     {
         state = ActualState.IN_RECALL;
         m_RecallFx.SetActive(true);
-    }   
-    public void ExecuteEndRecall()  
+    }
+    public void ExecuteEndRecall()
     {
         m_MyPhotonView.RPC("RPC_EndRecall", RpcTarget.AllViaServer);
     }
     [PunRPC]
-    public void RPC_EndRecall() 
+    public void RPC_EndRecall()
     {
         StartCoroutine(RecallCoroutine());
     }
@@ -602,7 +606,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
         m_CancelCastButton.gameObject.SetActive(true);
         attack1Indicator.SetActive(true);
     }
-   
+
     public void OnPointerDownAttack2(PointerEventData data)
     {
         m_CancelCastButton.gameObject.SetActive(true);
@@ -711,21 +715,21 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
                 if (m_respowntime > 1)
                 {
                     m_respowntime -= Time.deltaTime;
-                    InGameManager.IGM.respawnTimeUI.text =" Respawn in : " +Mathf.RoundToInt(m_respowntime).ToString()+" s";
+                    InGameManager.IGM.respawnTimeUI.text = " Respawn in : " + Mathf.RoundToInt(m_respowntime).ToString() + " s";
                     if (!InGameManager.IGM.respawnCanvas.activeSelf)
-                    InGameManager.IGM.respawnCanvas.SetActive(false);
+                        InGameManager.IGM.respawnCanvas.SetActive(false);
 
                 }
                 else
                 {
                     ExecuteRespawn();
                     SetRespawn();
-                  
+
                 }
             }
         }
-        
-       
+
+
     }
 
 
@@ -756,5 +760,5 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
     {
     }
 
-   
+
 }

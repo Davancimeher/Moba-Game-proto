@@ -110,6 +110,7 @@ public class CurrentRoomManager : MonoBehaviour, IInRoomCallbacks
     }
     public void AddPlayersLoadObjects(List<Player> players)
     {
+        UIManager.UIM.SetNbrOfPlayersLoadingScreen(players.Count);
         foreach (var player in players)
         {
             UIGenerator.UIG.AddPlayerLoadUIObjects(player);
@@ -357,6 +358,7 @@ public class CurrentRoomManager : MonoBehaviour, IInRoomCallbacks
                     PlayerState.m_Instance.OverrideState(State.IN_READY_PANEL);
 
                     UIManager.UIM.ResetHerosButtons();
+                    UIManager.UIM.StartReadyCountdownUI(m_ReadyCountDown);
 
                     if (PhotonNetwork.IsMasterClient)
                         StartCoroutine(ReadyTimeCoroutine());
@@ -365,6 +367,7 @@ public class CurrentRoomManager : MonoBehaviour, IInRoomCallbacks
                     UIGenerator.UIG.AddPlayersTeamUIObject(RoomData.RD.m_MyTeamPlayers.Values.ToList());
                     PlayerState.m_Instance.OverrideState(State.IN_HERO_PANEL);
                     m_ChooseHeroCountDown = (byte)GlobalVariables.m_ChooseHeroCountDown;
+                    UIManager.UIM.ChooseHeroCountdownUI(m_ChooseHeroCountDown);
 
                     if (PhotonNetwork.IsMasterClient)
                         StartCoroutine(ChooseHeroCoroutine());
@@ -514,6 +517,8 @@ public class CurrentRoomManager : MonoBehaviour, IInRoomCallbacks
             if (UIGenerator.UIG.m_playersUILoadDictionary.ContainsKey(actor))
             {
                 UIGenerator.UIG.m_playersUILoadDictionary[actor].SetSceneLoaded();
+                UIManager.UIM.SetPlayersLoaded(); // Add one more player to the list of the players who finished loading the scene
+
                 if (!RoomData.RD.m_PlayersSceneReady.Contains(actor))
                 {
                     RoomData.RD.m_PlayersSceneReady.Add(actor);
