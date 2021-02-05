@@ -79,6 +79,10 @@ public class UIManager : MonoBehaviour
     [Header("Load Scene Network")]
     public GameObject m_PlayerNetworkPrefab;
     public Transform m_PlayerNetworkPrefabsParent;
+    public TextMeshProUGUI NbrOfPlayersText;
+    private string NbrOfPlayersMax;
+    private int NbrOfPlayersLoaded =0;
+
 
     private int MyPing;
     private int timeInMatchMaking = 0;
@@ -395,5 +399,17 @@ public class UIManager : MonoBehaviour
                 HideReadyPanel();
                 break;
         }
+    }
+
+    public void SetNbrOfPlayersLoadingScreen(int NbPlayers)
+    {
+        NbrOfPlayersMax = NbPlayers.ToString();
+        NbrOfPlayersText.text = $"{NbrOfPlayersLoaded}/{NbrOfPlayersMax}";
+    }
+
+    public void SetPlayersLoaded()
+    {
+        NbrOfPlayersLoaded++;
+        NbrOfPlayersText.text = $"{NbrOfPlayersLoaded}/{NbrOfPlayersMax}";
     }
 }
