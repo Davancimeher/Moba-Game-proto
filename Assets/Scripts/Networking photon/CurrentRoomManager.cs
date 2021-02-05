@@ -366,6 +366,7 @@ public class CurrentRoomManager : MonoBehaviour, IInRoomCallbacks
                     UIGenerator.UIG.AddPlayersTeamUIObject(RoomData.RD.m_MyTeamPlayers.Values.ToList());
                     PlayerState.m_Instance.OverrideState(State.IN_HERO_PANEL);
                     m_ChooseHeroCountDown = (byte)GlobalVariables.m_ChooseHeroCountDown;
+                    UIManager.UIM.ChooseHeroCountdownUI(m_ChooseHeroCountDown);
 
                     if (PhotonNetwork.IsMasterClient)
                         StartCoroutine(ChooseHeroCoroutine());

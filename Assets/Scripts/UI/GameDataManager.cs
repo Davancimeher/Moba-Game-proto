@@ -142,14 +142,14 @@ public class GameDataManager : MonoBehaviour
         if (SelectedHero != null)
         {
             if (Hero == SelectedHero.m_Hero) return;
-            m_HeroHandlers[SelectedHero.m_Hero.ID].m_HeroImage.color = Color.white;
+            m_HeroHandlers[SelectedHero.m_Hero.ID].m_HeroSelected.gameObject.SetActive(false);
             Destroy(selectedHeroGO);
         }
 
         if (m_HeroHandlers.ContainsKey(Hero.ID))
         {
             SelectedHero = m_HeroHandlers[Hero.ID];
-            SelectedHero.m_HeroImage.color = Color.green;
+            SelectedHero.m_HeroSelected.gameObject.SetActive(true);
             selectedHeroGO = Instantiate(Hero.HeroPrefab, MyHeroParent.transform);
         }
 

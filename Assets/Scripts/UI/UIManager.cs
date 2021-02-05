@@ -63,8 +63,12 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI m_LoadingProgressText;
 
     [Header("Ready Panel Controller")]
-    public Image CountdownFillAmount;
-    [HideInInspector] public Tweener CountdownFillAmountTween = null;
+    public Image ReadyCountdownFillAmount;
+    [HideInInspector] public Tweener ReadyCountdownFillAmountTween = null;
+
+    [Header("ChooseHero Panel Controller")]
+    public Image ChooseHeroCountdownFillAmount;
+    [HideInInspector] public Tweener ChooseHeroCountdownFillAmountTween = null;
 
     [Header("Profil")]
     public GameObject m_ProfilCanvas;
@@ -187,9 +191,9 @@ public class UIManager : MonoBehaviour
 
             //Reset ReadyCountdown for the next queue
             m_ReadyCountDownText.text = "";
-            CountdownFillAmount.fillAmount = 1;
-            CountdownFillAmountTween.Kill();
-            CountdownFillAmountTween = null;
+            ReadyCountdownFillAmount.fillAmount = 1;
+            ReadyCountdownFillAmountTween.Kill();
+            ReadyCountdownFillAmountTween = null;
         }
     }
 
@@ -214,6 +218,12 @@ public class UIManager : MonoBehaviour
         if (m_HeroPanel.activeSelf)
         {
             m_HeroPanel.SetActive(false);
+
+            //Reset ReadyCountdown for the next queue
+            m_ChooseHeroCountDownText.text = "";
+            ChooseHeroCountdownFillAmount.fillAmount = 1;
+            ChooseHeroCountdownFillAmountTween.Kill();
+            ChooseHeroCountdownFillAmountTween = null;
         }
         if (m_HeroInvorinement.activeSelf)
         {
@@ -248,7 +258,7 @@ public class UIManager : MonoBehaviour
 
     public void StartReadyCountdownUI(int time_S)
     {
-        CountdownFillAmountTween = CountdownFillAmount.DOFillAmount(0, time_S).SetEase(Ease.Linear);
+        ReadyCountdownFillAmountTween = ReadyCountdownFillAmount.DOFillAmount(0, time_S).SetEase(Ease.Linear);
     }
 
     public void UpdateChooseHeroCountdownUI(int time_S)
@@ -257,6 +267,12 @@ public class UIManager : MonoBehaviour
         string seconds = (time_S % 60).ToString("00");
         m_ChooseHeroCountDownText.text = $"{minutes}:{seconds}";
     }
+
+    public void ChooseHeroCountdownUI(int time_S)
+    {
+        ChooseHeroCountdownFillAmountTween = ChooseHeroCountdownFillAmount.DOFillAmount(0, time_S).SetEase(Ease.Linear);
+    }
+
     private IEnumerator MatchMakingTimeCoroutine()
     {
         while (PlayerState.m_Instance.m_State == State.INLOBBY)
