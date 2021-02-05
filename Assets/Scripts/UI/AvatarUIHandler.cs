@@ -5,14 +5,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class AvatarUIHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class AvatarUIHandler : MonoBehaviour
 {
     [HideInInspector] public Avatar m_Avatar;
 
     public TextMeshProUGUI m_AvatarIdText;
     public Button m_avatarButton;
     public Image m_AvatarImage;
-    public Image m_AvatarImageHover;
     public Image m_AvatarImageSelected;
 
     public void Init(Avatar _avatar)
@@ -29,15 +28,5 @@ public class AvatarUIHandler : MonoBehaviour, IPointerEnterHandler, IPointerExit
     public void SetSelected(bool value)
     {
         m_AvatarImageSelected.gameObject.SetActive(value);
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        m_AvatarImageHover.gameObject.SetActive(true);
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        m_AvatarImageHover.gameObject.SetActive(false);
     }
 }

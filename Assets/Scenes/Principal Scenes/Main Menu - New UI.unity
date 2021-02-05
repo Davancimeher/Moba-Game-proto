@@ -1562,7 +1562,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 30
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6861,6 +6861,7 @@ MonoBehaviour:
   m_TeamLayoutGroup: {fileID: 1938482239}
   m_LockHeroButton: {fileID: 1127385633}
   m_LoadingProgressText: {fileID: 223974228}
+  CountdownFillAmount: {fileID: 709247925}
   m_ProfilCanvas: {fileID: 1469264280}
   m_AvatarProfil: {fileID: 26724386}
   m_ProfileName: {fileID: 1127309037}

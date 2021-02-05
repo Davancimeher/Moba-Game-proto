@@ -7,6 +7,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 public class UIManager : MonoBehaviour
 {
     public static UIManager UIM;
@@ -60,6 +61,10 @@ public class UIManager : MonoBehaviour
 
     [Header("Loading")]
     public TextMeshProUGUI m_LoadingProgressText;
+
+    [Header("Ready Panel Controller")]
+    public Image CountdownFillAmount;
+    [HideInInspector] public Tweener CountdownFillAmountTween = null;
 
     [Header("Profil")]
     public GameObject m_ProfilCanvas;
@@ -179,6 +184,12 @@ public class UIManager : MonoBehaviour
         if (m_ReadyPanel.activeSelf)
         {
             m_ReadyPanel.SetActive(false);
+
+            //Reset ReadyCountdown for the next queue
+            m_ReadyCountDownText.text = "";
+            CountdownFillAmount.fillAmount = 1;
+            CountdownFillAmountTween.Kill();
+            CountdownFillAmountTween = null;
         }
     }
 
@@ -230,10 +241,16 @@ public class UIManager : MonoBehaviour
     }
     public void UpdateReadyCountdownUI(int time_S)
     {
-        string minutes = (time_S / 60).ToString("0");
+        //string minutes = (time_S / 60).ToString("0");
         string seconds = (time_S % 60).ToString("00");
-        m_ReadyCountDownText.text = $"{minutes}:{seconds}";
+        m_ReadyCountDownText.text = seconds;
     }
+
+    public void StartReadyCountdownUI(int time_S)
+    {
+        CountdownFillAmountTween = CountdownFillAmount.DOFillAmount(0, time_S).SetEase(Ease.Linear);
+    }
+
     public void UpdateChooseHeroCountdownUI(int time_S)
     {
         string minutes = (time_S / 60).ToString("0");

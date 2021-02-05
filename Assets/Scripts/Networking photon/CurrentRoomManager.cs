@@ -357,6 +357,7 @@ public class CurrentRoomManager : MonoBehaviour, IInRoomCallbacks
                     PlayerState.m_Instance.OverrideState(State.IN_READY_PANEL);
 
                     UIManager.UIM.ResetHerosButtons();
+                    UIManager.UIM.StartReadyCountdownUI(m_ReadyCountDown);
 
                     if (PhotonNetwork.IsMasterClient)
                         StartCoroutine(ReadyTimeCoroutine());
