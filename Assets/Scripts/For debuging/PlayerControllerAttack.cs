@@ -98,7 +98,7 @@ internal class CustomTransform : MonoBehaviour
         m_LocalScale = _transform.localScale;
     }
 }
-public class AttackInput : MonoBehaviour
+public class AttackInput
 {
     public string AnimatorIndex;
 
