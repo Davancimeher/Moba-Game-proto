@@ -6,7 +6,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using Werewolf.StatusIndicators.Components;
 
 public enum ActualState
 {
@@ -483,7 +482,6 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
     {
         while (state == ActualState.DEAD)
         {
-            m_LagPlayerSync.InRespawn = true;
             m_ChampionCharacter.SetActive(false);
             this.transform.position = m_LagPlayerSync.SpawnPosition;
             m_Animator.SetBool("isDead", false);
@@ -495,7 +493,6 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
             m_SetPlayerInGameInfo.m_ChampionCanvas.SetActive(true);
             m_ChampionCharacter.SetActive(true);
             state = ActualState.PASSIVE;
-            m_LagPlayerSync.InRespawn = false;
 
             StopCoroutine(RespawnCoroutine());
         }
@@ -523,7 +520,6 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
     {
         while (state == ActualState.IN_RECALL)
         {
-            m_LagPlayerSync.InRespawn = true;
             m_ChampionCharacter.SetActive(false);
             m_RecallFx.SetActive(false);
             m_SetPlayerInGameInfo.m_ChampionCanvas.SetActive(false);
@@ -538,7 +534,6 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
             m_ChampionCharacter.SetActive(true);
             state = ActualState.PASSIVE;
             m_RecallFx.SetActive(false);
-            m_LagPlayerSync.InRespawn = false;
             StopCoroutine(RecallCoroutine());
         }
     }

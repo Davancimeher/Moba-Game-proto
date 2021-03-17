@@ -8,53 +8,55 @@ public class PlayerControllerAttack : MonoBehaviour
     public bool inAttack = false;
 
     public GameObject fx1;
-    public GameObject fx3;
     public GameObject fx2;
+    public GameObject fx3;
+
 
     public Queue<AttackInput> attackInputs = new Queue<AttackInput>();
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            if (inAttack)
-            {
-                AttackInput attackInput = new AttackInput("Attack1");
-                attackInputs.Enqueue(attackInput);
-            }
-            else
-            {
-                AttackInput attackInput = new AttackInput("Attack1");
-                ExecuteAttaque(attackInput);
-            }
-        }
-        else if (Input.GetKeyDown(KeyCode.Z))
-        {
-            if (inAttack)
-            {
-                AttackInput attackInput = new AttackInput("Attack2");
-                attackInputs.Enqueue(attackInput);
-            }
-            else
-            {
-                AttackInput attackInput = new AttackInput("Attack2");
-                ExecuteAttaque(attackInput);
-            }
-        }
-        else if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (inAttack)
-            {
-                AttackInput attackInput = new AttackInput("Attack3");
-                attackInputs.Enqueue(attackInput);
-            }
-            else
-            {
-                AttackInput attackInput = new AttackInput("Attack3");
-                ExecuteAttaque(attackInput);
-            }
-        }
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.A))
+    //    {
+    //        if (inAttack)
+    //        {
+    //            AttackInput attackInput = new AttackInput("Attack1");
+    //            attackInputs.Enqueue(attackInput);
+    //        }
+    //        else
+    //        {
+    //            AttackInput attackInput = new AttackInput("Attack1");
+    //            ExecuteAttaque(attackInput);
+    //        }
+    //    }
+    //    else if (Input.GetKeyDown(KeyCode.Z))
+    //    {
+    //        if (inAttack)
+    //        {
+    //            AttackInput attackInput = new AttackInput("Attack2");
+    //            attackInputs.Enqueue(attackInput);
+    //        }
+    //        else
+    //        {
+    //            AttackInput attackInput = new AttackInput("Attack2");
+    //            ExecuteAttaque(attackInput);
+    //        }
+    //    }
+    //    else if (Input.GetKeyDown(KeyCode.E))
+    //    {
+    //        if (inAttack)
+    //        {
+    //            AttackInput attackInput = new AttackInput("Attack3");
+    //            attackInputs.Enqueue(attackInput);
+    //        }
+    //        else
+    //        {
+    //            AttackInput attackInput = new AttackInput("Attack3");
+    //            ExecuteAttaque(attackInput);
+    //        }
+    //    }
+    //}
+
     public void ShowFx(int id)
     {
         if (id == 1)
@@ -83,7 +85,7 @@ public class PlayerControllerAttack : MonoBehaviour
     }
 }
 
-internal class CustomTransform : MonoBehaviour
+internal class CustomTransform
 {
     public Transform m_Parent;
     public Vector3 m_LocalPosition;

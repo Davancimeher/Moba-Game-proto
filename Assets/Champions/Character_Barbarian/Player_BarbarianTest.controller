@@ -9,7 +9,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Attack3
+    m_ConditionEvent: Attack2
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3511645290133647065}
@@ -282,10 +282,10 @@ AnimatorStateMachine:
     m_Position: {x: 310, y: -220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7074248537194142787}
-    m_Position: {x: 310, y: -280, z: 0}
+    m_Position: {x: 310, y: -340, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3511645290133647065}
-    m_Position: {x: 310, y: -330, z: 0}
+    m_Position: {x: 310, y: -280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3246143716162411682}
     m_Position: {x: 320, y: -100, z: 0}
@@ -766,7 +766,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Attack3
+  m_Name: Attack2
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -973,7 +973,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Attack2
+  m_Name: Attack3
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1139,7 +1139,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Attack2
+    m_ConditionEvent: Attack3
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7074248537194142787}
