@@ -14,8 +14,8 @@ public class PlayerControllerAttack : MonoBehaviour
 
     public Queue<AttackInput> attackInputs = new Queue<AttackInput>();
 
-    //private void Update()
-    //{
+    private void Update()
+    {
     //    if (Input.GetKeyDown(KeyCode.A))
     //    {
     //        if (inAttack)
@@ -55,7 +55,7 @@ public class PlayerControllerAttack : MonoBehaviour
     //            ExecuteAttaque(attackInput);
     //        }
     //    }
-    //}
+    }
 
     public void ShowFx(int id)
     {
@@ -91,7 +91,6 @@ internal class CustomTransform
     public Vector3 m_LocalPosition;
     public Quaternion m_LocalRotation;
     public Vector3 m_LocalScale;
-
     public CustomTransform(Transform _transform)
     {
         m_Parent = _transform.parent;

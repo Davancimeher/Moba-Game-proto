@@ -37,7 +37,6 @@ public class PlayerMouvementTest : MonoBehaviour
 
         horizontaleMove = joystick.GetHorizontalAxis() * speed;
         VerticakMove = joystick.GetVerticalAxis() * speed;
-
        direction = new Vector3(horizontaleMove, 0, VerticakMove).normalized;
 
         if (direction.magnitude >= 0.5f)

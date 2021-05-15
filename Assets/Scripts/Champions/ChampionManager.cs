@@ -78,6 +78,14 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
     [Header("Champion manager variables")]
     public Attack m_ActualAttack;
 
+    [Header("Fx holders")]
+    public ChampionFXHolder FxAttack1;
+    public ChampionFXHolder FxAttack2;
+    public ChampionFXHolder FxAttack3;
+
+    [Header("Actual Hit Trigger")]
+    public ChampionFXHolder ActualFxHolder;
+
     private EventTrigger Attack1Event;
     private EventTrigger Attack2Event;
     private EventTrigger Attack3Event;
@@ -220,6 +228,13 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
             m_MyPhotonView.RPC("RPC_Attack3Execution", RpcTarget.AllViaServer);
         }
     }
+    public void OnEnableFx()
+    {
+        if (state != ActualState.DEAD)
+        {
+            m_MyPhotonView.RPC("RPC_ShowFx", RpcTarget.AllViaServer);
+        }
+    }
 
     public void UpdateRateValues()
     {
@@ -253,7 +268,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
             if (Attack1Event.isActiveAndEnabled) Attack1Event.enabled = false;
 
             Attack1Rate -= Time.deltaTime;
-            m_Attack1ImageCooldown.fillAmount = 1-((Attack1.AttackRate - Attack1Rate) / Attack1.AttackRate);
+            m_Attack1ImageCooldown.fillAmount = 1 - ((Attack1.AttackRate - Attack1Rate) / Attack1.AttackRate);
             m_Attack1Time.text = Mathf.RoundToInt(Attack1Rate).ToString();
         }
         else
@@ -274,7 +289,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
             if (Attack2Event.isActiveAndEnabled) Attack2Event.enabled = false;
 
             Attack2Rate -= Time.deltaTime;
-            m_Attack2ImageCooldown.fillAmount = 1-((Attack2.AttackRate - Attack2Rate) / Attack2.AttackRate);
+            m_Attack2ImageCooldown.fillAmount = 1 - ((Attack2.AttackRate - Attack2Rate) / Attack2.AttackRate);
             m_Attack2Time.text = Mathf.RoundToInt(Attack2Rate).ToString();
         }
         else
@@ -295,7 +310,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
             if (Attack3Event.isActiveAndEnabled) Attack3Event.enabled = false;
 
             Attack3Rate -= Time.deltaTime;
-            m_Attack3ImageCooldown.fillAmount = 1-((Attack3.AttackRate - Attack3Rate) / Attack3.AttackRate);
+            m_Attack3ImageCooldown.fillAmount = 1 - ((Attack3.AttackRate - Attack3Rate) / Attack3.AttackRate);
             m_Attack3Time.text = Mathf.RoundToInt(Attack3Rate).ToString();
         }
         else
@@ -407,6 +422,10 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
     public void RPC_Attack1Execution()
     {
         m_ActualAttack = Attack1;
+        ActualFxHolder = FxAttack1;
+
+        //ActualFxHolder.Fx.SetActive(true);
+
         m_Animator.SetTrigger("Attack1");
 
         if (m_MyPhotonView.IsMine)
@@ -418,6 +437,9 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
     public void RPC_Attack2Execution()
     {
         m_ActualAttack = Attack2;
+        ActualFxHolder = FxAttack2;
+        //ActualFxHolder.Fx.SetActive(true);
+
         m_Animator.SetTrigger("Attack2");
 
         if (m_MyPhotonView.IsMine)
@@ -429,12 +451,21 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
     public void RPC_Attack3Execution()
     {
         m_ActualAttack = Attack3;
+        ActualFxHolder = FxAttack3;
+        //ActualFxHolder.Fx.SetActive(true);
+
         m_Animator.SetTrigger("Attack3");
 
         if (m_MyPhotonView.IsMine)
         {
             Attack3Rate = Attack3.AttackRate;
         }
+    }
+
+    [PunRPC]
+    public void RPC_ShowFx()
+    {
+        ActualFxHolder.Fx.SetActive(true);
     }
     public void ExecuteSetDead()
     {
@@ -483,7 +514,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
         while (state == ActualState.DEAD)
         {
             m_ChampionCharacter.SetActive(false);
-            this.transform.position = m_LagPlayerSync.SpawnPosition;
+            transform.position = m_LagPlayerSync.SpawnPosition;
             m_Animator.SetBool("isDead", false);
 
             yield return new WaitForSeconds(1f);
@@ -524,7 +555,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
             m_RecallFx.SetActive(false);
             m_SetPlayerInGameInfo.m_ChampionCanvas.SetActive(false);
 
-            this.transform.position = m_LagPlayerSync.SpawnPosition;
+            transform.position = m_LagPlayerSync.SpawnPosition;
 
             yield return new WaitForSeconds(1f);
 
@@ -755,5 +786,12 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
     {
     }
 
+
+
+    public void ShowFx(int id)
+    {
+        if (m_ActualAttack != m_AutoAttack)
+            OnEnableFx();
+    }
 
 }

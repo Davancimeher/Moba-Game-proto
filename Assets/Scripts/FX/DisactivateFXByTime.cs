@@ -7,6 +7,7 @@ public class DisactivateFXByTime : MonoBehaviour
     public float FXTime;
     private float time;
     private CustomTransform MyCustomTransform = null;
+    public Collider FxCollider;
 
     private void OnEnable()
     {
@@ -14,6 +15,8 @@ public class DisactivateFXByTime : MonoBehaviour
 
         transform.parent = null;
         time = FXTime;
+        FxCollider.enabled = true;
+
         StartCoroutine(fxTime());
     }
 

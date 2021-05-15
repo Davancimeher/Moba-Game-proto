@@ -311,7 +311,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02053f0c73bf0ff4290c38d1ba6931ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InRespawn: 0
   SpawnPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &-2538754183643622335
 MonoBehaviour:

@@ -26,7 +26,15 @@ public class HitTrigger : MonoBehaviour
                     {
                         PhotonView photonView = other.gameObject.GetComponent<PhotonView>();
 
-                        ChampionManager.m_HitObject.SetActive(false);
+                        if(ChampionManager.m_ActualAttack != ChampionManager.m_AutoAttack)
+                        {
+                            ChampionManager.ActualFxHolder.FxCollision.enabled = false;
+                        }
+                        else
+                        {
+                            ChampionManager.m_HitObject.SetActive(false);
+                        }
+
 
                         HealthManager.ExecuteDamageRPC(ChampionManager.m_MyPhotonView, photonView.Owner, ChampionManager.m_ActualAttack.Damage);
 
