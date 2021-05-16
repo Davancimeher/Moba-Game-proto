@@ -302,6 +302,7 @@ MonoBehaviour:
   teamIndex: 0
   Killer: 0
   LastAssist: 0
+  Assistors: 
   _ChampionScore: {fileID: 0}
 --- !u!65 &3701809061963987140
 BoxCollider:

@@ -139,6 +139,15 @@ public class ChampionScore : MonoBehaviour
             {
                 Debug.LogError("RPC_AddKillForKiller 1 : i'm not the Killer  My ID : " + PhotonView.ViewID + " killer ID : " + _killerActor);
             }
+
+            if (PhotonNetwork.IsMasterClient)
+            {
+                
+                var killerActor = RoomData.RD.PlayersPhotonViews[_killerActor].Owner.ActorNumber;
+                var KillerTeam = RoomData.RD.m_PlayersTeams[killerActor];
+
+                ScoreManagerInGame.SM.AddTeamKills(KillerTeam);
+            }
         }
 
     }

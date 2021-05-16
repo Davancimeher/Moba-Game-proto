@@ -165,7 +165,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &15901140
 RectTransform:
   m_ObjectHideFlags: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2175,7 +2175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &302794031
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2214,7 +2214,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2494,7 +2494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &362101492
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2568,7 +2568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &385840143
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3904,7 +3904,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &602933733
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6972,6 +6972,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1010404005}
   - component: {fileID: 1010404004}
+  - component: {fileID: 1010404006}
   m_Layer: 0
   m_Name: ----InGameManager----
   m_TagString: Untagged
@@ -7052,6 +7053,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1010404006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010404003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47f4751c4a0427d4bbb5702d4b0a8b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Team1KillsText: {fileID: 15901141}
+  m_Team2KillsText: {fileID: 302794032}
+  Team1Kills: 0
+  Team2Kills: 0
 --- !u!1 &1016890617 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 252c849895674154189580e7027ad0db,
@@ -8573,7 +8590,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1195045685
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9197,19 +9214,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22420156, guid: 4adbe3ac910c42e4883b0170504cf426, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.8613281
+      value: 0.85787964
       objectReference: {fileID: 0}
     - target: {fileID: 22420156, guid: 4adbe3ac910c42e4883b0170504cf426, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.8612671
+      value: 0.8578949
       objectReference: {fileID: 0}
     - target: {fileID: 22420156, guid: 4adbe3ac910c42e4883b0170504cf426, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 372.254
+      value: 171.58
       objectReference: {fileID: 0}
     - target: {fileID: 22420156, guid: 4adbe3ac910c42e4883b0170504cf426, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 372.254
+      value: 171.58
       objectReference: {fileID: 0}
     - target: {fileID: 22464756, guid: 4adbe3ac910c42e4883b0170504cf426, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9257,19 +9274,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22464756, guid: 4adbe3ac910c42e4883b0170504cf426, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 145.32202
+      value: 67.016205
       objectReference: {fileID: 0}
     - target: {fileID: 22464756, guid: 4adbe3ac910c42e4883b0170504cf426, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 18.78836
+      value: 8.659958
       objectReference: {fileID: 0}
     - target: {fileID: 22464756, guid: 4adbe3ac910c42e4883b0170504cf426, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 375.97653
+      value: 173.2958
       objectReference: {fileID: 0}
     - target: {fileID: 22464756, guid: 4adbe3ac910c42e4883b0170504cf426, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 375.97653
+      value: 173.2958
       objectReference: {fileID: 0}
     - target: {fileID: 22464756, guid: 4adbe3ac910c42e4883b0170504cf426, type: 3}
       propertyPath: m_AnchorMin.x
@@ -10131,7 +10148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1449150779
 RectTransform:
   m_ObjectHideFlags: 0

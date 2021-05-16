@@ -25,6 +25,8 @@ public class RoomData : MonoBehaviour
 
     public Dictionary<int, GameObject> PlayersChampions = new Dictionary<int, GameObject>();
 
+    public Dictionary<int, PhotonView> PlayersPhotonViews = new Dictionary<int, PhotonView>();
+
     public Hero MyHero;
 
     public ChampionManager m_MyChampionManager;

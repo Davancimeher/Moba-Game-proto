@@ -49,6 +49,11 @@ public class SetPlayerInGameInfo : MonoBehaviour, IPunInstantiateMagicCallback
             RoomData.RD.PlayersChampions.Add(info.Sender.ActorNumber, this.gameObject);
         }
 
+        if (!RoomData.RD.PlayersPhotonViews.ContainsKey(info.photonView.ViewID))
+        {
+            RoomData.RD.PlayersPhotonViews.Add(info.photonView.ViewID, info.photonView);
+        }
+
         HealthManager healthManager = this.gameObject.GetComponent<HealthManager>();
 
         healthManager.MaxHealth = (int)instantiationData[0];

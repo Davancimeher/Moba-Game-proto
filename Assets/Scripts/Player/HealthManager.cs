@@ -174,6 +174,7 @@ public class HealthManager : MonoBehaviour, IPunObservable
             IsDead = false;
             Health = MaxHealth;
             UpdateHealthBar(Health);
+
             Assistors.Clear();
             Killer = -1;
         }
