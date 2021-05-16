@@ -1,6 +1,7 @@
 ﻿using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -85,7 +86,7 @@ public class ChampionScore : MonoBehaviour
     {
         TotalScore = Kills * 10 + Deaths * -3 + Assists;
     }
-    public void AddDeath(int _killerActor,int _assiterActor)
+    public void AddDeath(int _killerActor,List<int> _assitersList)
     {
         AddDeath();
         Debug.LogError("Add Death : killer id : " + _killerActor);
@@ -94,10 +95,19 @@ public class ChampionScore : MonoBehaviour
         {
             ExecuteAddKillForKiller(_killerActor);
         }
-        if(_assiterActor >= 0 && _assiterActor != _killerActor)
+
+        if(_assitersList.Count > 0 )
         {
-            ExecuteAddAssistForAssistor(_assiterActor);
+            if (_assitersList.Contains(_killerActor))
+            {
+                _assitersList.Remove(_killerActor);
+                ExecuteAddAssistForAssistor(_assitersList);
+
+            }
         }
+        //if(_assiterActor >= 0 && _assiterActor != _killerActor)
+        //{
+        //}
     }
     public void ExecuteAddKillForKiller(int _killerActor)
     {
@@ -132,27 +142,32 @@ public class ChampionScore : MonoBehaviour
         }
 
     }
-    public void ExecuteAddAssistForAssistor(int _AssistorActor)
+    public void ExecuteAddAssistForAssistor(List<int> _AssistorsActor)
     {
-
-        Debug.LogError("ExecuteAddAssistForAssistor : assistor id : " + _AssistorActor);
-
-        if (RoomData.RD.PlayersChampions.ContainsKey(PhotonNetwork.LocalPlayer.ActorNumber))
+        if (_AssistorsActor.Count > 0)
         {
-            PhotonView pv = RoomData.RD.PlayersChampions[PhotonNetwork.LocalPlayer.ActorNumber].GetComponent<PhotonView>();
-            pv.RPC("RPC_AddAssistForAssistor", RpcTarget.AllViaServer, _AssistorActor);
+
+            Debug.LogError("ExecuteAddAssistForAssistor : assistor count : " + _AssistorsActor.Count);
+            if (RoomData.RD.PlayersChampions.ContainsKey(PhotonNetwork.LocalPlayer.ActorNumber))
+            {
+                PhotonView pv = RoomData.RD.PlayersChampions[PhotonNetwork.LocalPlayer.ActorNumber].GetComponent<PhotonView>();
+                pv.RPC("RPC_AddAssistForAssistor", RpcTarget.AllViaServer, _AssistorsActor.ToArray());
+            }
         }
+
+     
     }
 
     [PunRPC]
-    public void RPC_AddAssistForAssistor(int _AssistorActor)
+    public void RPC_AddAssistForAssistor(int[] _AssistorsActor)
     {   
         if (RoomData.RD.PlayersChampions.ContainsKey(PhotonNetwork.LocalPlayer.ActorNumber))
         {
             Debug.LogError("RPC_AddAssistForAssistor");
             ChampionManager cm = RoomData.RD.PlayersChampions[PhotonNetwork.LocalPlayer.ActorNumber].GetComponent<ChampionManager>();
+            var _AssistorsActorList = _AssistorsActor.ToList();
 
-            if (cm.m_MyPhotonView.ViewID == _AssistorActor)
+            if (_AssistorsActorList.Contains( cm.m_MyPhotonView.ViewID))
             {
                 cm.m_ChampionScore.AddAssists();
                 Debug.LogError("RPC_AddAssistForAssistor 1 : i'm the assistor");
@@ -160,7 +175,7 @@ public class ChampionScore : MonoBehaviour
             }
             else
             {
-                Debug.LogError("RPC_AddAssistForAssistor 1 : i'm not the assistor  My ID : " + PhotonView.ViewID + " killer ID : " + _AssistorActor);
+                Debug.LogError("RPC_AddAssistForAssistor 1 : i'm not the assistor  My ID : " + PhotonView.ViewID + " assistors ID : " + _AssistorsActor.Count());
             }
         }
 

@@ -25,6 +25,7 @@ public class HealthManager : MonoBehaviour, IPunObservable
     public int Killer;
     public int LastAssist;
 
+    public List<int> Assistors = new List<int>();
 
     public ChampionScore _ChampionScore;
     private void Start()
@@ -96,10 +97,9 @@ public class HealthManager : MonoBehaviour, IPunObservable
         //}
     }
 
-    public void AddDeath(int KillerActor, int assisterActor)
+    public void AddDeath(int KillerActor,List< int> assisterActor)
     {
         _ChampionScore.AddDeath(KillerActor, assisterActor);
-        Killer = -1;
     }
     public void SetHitter(bool isTower, int actor,int damage)
     {
@@ -119,9 +119,9 @@ public class HealthManager : MonoBehaviour, IPunObservable
     public void SetAssister(bool isTower, int actor)
     {
         if (!isTower)
-            if (Killer != actor)
+            if (Killer != actor && !Assistors.Contains(actor))
             {
-                LastAssist = actor;
+                Assistors.Add(actor);
             }
     }
 
@@ -159,7 +159,7 @@ public class HealthManager : MonoBehaviour, IPunObservable
         {
             if (Health <= 0 && !IsDead)
             {
-                AddDeath(Killer, LastAssist);
+                AddDeath(Killer, Assistors);
                 Debug.Log("dzdz");
                 m_ChampionManager.ExecuteSetDead();
                 m_ChampionManager.SetDead();
@@ -174,6 +174,8 @@ public class HealthManager : MonoBehaviour, IPunObservable
             IsDead = false;
             Health = MaxHealth;
             UpdateHealthBar(Health);
+            Assistors.Clear();
+            Killer = -1;
         }
     }
     public IEnumerator RegenerateHealth()
