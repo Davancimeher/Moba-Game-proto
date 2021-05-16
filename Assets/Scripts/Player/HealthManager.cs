@@ -18,8 +18,22 @@ public class HealthManager : MonoBehaviour, IPunObservable
     public ChampionManager m_ChampionManager;
 
     public bool InRegen;
+    public bool IsDead;
 
     public byte teamIndex;
+
+    public int Killer;
+    public int LastAssist;
+
+
+    public ChampionScore _ChampionScore;
+    private void Start()
+    {
+        _ChampionScore = m_ChampionManager.m_ChampionScore;
+        Killer = -1;
+        LastAssist = -1;
+    }
+
     public int Lastdamage
     {
         get { return Lastdamage; }
@@ -60,23 +74,62 @@ public class HealthManager : MonoBehaviour, IPunObservable
         }
     }
 
-    public void ExecuteDamageRPC(PhotonView senderPhotonView, Player playerDamaged, int _damage)
+    public void ExecuteDamageRPC(PhotonView senderPhotonView, Player playerDamaged, int _damage, bool IsTower)
     {
-        senderPhotonView.RPC("RPC_ApplyDamage", playerDamaged, _damage);
+        senderPhotonView.RPC("RPC_ApplyDamage", playerDamaged, _damage, IsTower, senderPhotonView.ViewID);
     }
 
     [PunRPC]
-    public void RPC_ApplyDamage(int _damage)
+    public void RPC_ApplyDamage(int _damage, bool isTower, int DamageActor)
     {
-        if (RoomData.RD.PlayersChampions.ContainsKey(PhotonNetwork.LocalPlayer.ActorNumber))
-        {
-            RoomData.RD.PlayersChampions[PhotonNetwork.LocalPlayer.ActorNumber].GetComponent<HealthManager>().TakeDamage(_damage);
-        }
+        RoomData.RD.m_MyChampionManager.m_HealthManager.TakeDamage(_damage);
+        RoomData.RD.m_MyChampionManager.m_HealthManager.SetHitter(isTower, DamageActor,_damage);
+        RoomData.RD.m_MyChampionManager.m_HealthManager.SetAssister(isTower, DamageActor);
+
+
+        //if (RoomData.RD.PlayersChampions.ContainsKey(PhotonNetwork.LocalPlayer.ActorNumber))
+        //{
+        //    HealthManager healthManager = RoomData.RD.PlayersChampions[PhotonNetwork.LocalPlayer.ActorNumber].GetComponent<HealthManager>();
+
+        //    healthManager.TakeDamage(_damage);
+        //    healthManager.SetHitter(isTower, DamageActor);
+        //}
     }
+
+    public void AddDeath(int KillerActor, int assisterActor)
+    {
+        _ChampionScore.AddDeath(KillerActor, assisterActor);
+        Killer = -1;
+    }
+    public void SetHitter(bool isTower, int actor,int damage)
+    {
+        if(Health - damage <= 0)
+        {
+            if (isTower)
+            {
+                Killer = -1;
+            }
+            else
+            {
+                Killer = actor;
+            }
+        }
+        
+    }
+    public void SetAssister(bool isTower, int actor)
+    {
+        if (!isTower)
+            if (Killer != actor)
+            {
+                LastAssist = actor;
+            }
+    }
+
+
     public void ExecuteTowerDamageRPC(PhotonView senderPhotonView, Player playerDamaged, int _damage)
     {
         senderPhotonView.RPC("RPC_ApplyTowerDamage", playerDamaged, _damage);
-    }  
+    }
 
     [PunRPC]
     public void RPC_ApplyTowerDamage(int _damage)
@@ -104,10 +157,13 @@ public class HealthManager : MonoBehaviour, IPunObservable
     {
         if (m_PhotonView.IsMine)
         {
-            if (Health <= 0)
+            if (Health <= 0 && !IsDead)
             {
+                AddDeath(Killer, LastAssist);
+                Debug.Log("dzdz");
                 m_ChampionManager.ExecuteSetDead();
                 m_ChampionManager.SetDead();
+                IsDead = true;
             }
         }
     }
@@ -115,6 +171,7 @@ public class HealthManager : MonoBehaviour, IPunObservable
     {
         if (m_PhotonView.IsMine)
         {
+            IsDead = false;
             Health = MaxHealth;
             UpdateHealthBar(Health);
         }

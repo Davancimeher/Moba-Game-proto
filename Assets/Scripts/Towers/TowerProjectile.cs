@@ -45,7 +45,7 @@ public class TowerProjectile : MonoBehaviour
 
             if (hm.m_ChampionManager.state != ActualState.DEAD && hm.m_ChampionManager.state != ActualState.REGEN_HEALTH)
             {
-                hm.ExecuteDamageRPC(InGameManager.IGM.m_MasterPhotonView,pv.Owner, Damage);
+                hm.ExecuteDamageRPC(InGameManager.IGM.m_MasterPhotonView,pv.Owner, Damage,true);
                 Destroy(gameObject);
             }
         }

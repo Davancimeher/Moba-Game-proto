@@ -70,7 +70,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
-    - _Cutoff: 0.030322768
+    - _Cutoff: 0.6911746
     - _Cutout: 0.456
     - _Cutout2: 0
     - _CutoutThickness: 0.01

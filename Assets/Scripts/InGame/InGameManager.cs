@@ -67,6 +67,10 @@ public class InGameManager : MonoBehaviour
 
     public List<Tower> m_Towers = new List<Tower>();
 
+    public TextMeshProUGUI KillsText;
+    public TextMeshProUGUI DeathText;
+    public TextMeshProUGUI Assists;
+
     private void Awake()
     {
         #region singleton
@@ -128,6 +132,14 @@ public class InGameManager : MonoBehaviour
         m_MyChampionManager.InitChampionManager(myHero, m_AutoAttackObject, m_Attack1Object, m_Attack2Object, m_Attack3Object, m_AutoAttackObjectCooldown, m_Attack1ObjectCooldown, m_Attack2ObjectCooldown, m_Attack3ObjectCooldown, m_CancelButton, m_RecallSpellObject);
 
         m_MyChampionManager.m_LagPlayerSync.SpawnPosition = myPlayerPosition;
+
+        m_MyChampionManager.InitScoresUI(KillsText, DeathText, Assists);
+
+        if (m_MyChampionManager.m_MyPhotonView.IsMine)
+        {
+            RoomData.RD.m_MyPhotonView = m_MyChampionManager.m_MyPhotonView;
+            RoomData.RD.m_MyChampionManager = m_MyChampionManager;
+        }
 
         //  m_CameraController.SetUpCamera(MyChampion.transform);
         m_Camera.Follow = MyChampion.transform;

@@ -36,7 +36,7 @@ public class HitTrigger : MonoBehaviour
                         }
 
 
-                        HealthManager.ExecuteDamageRPC(ChampionManager.m_MyPhotonView, photonView.Owner, ChampionManager.m_ActualAttack.Damage);
+                        HealthManager.ExecuteDamageRPC(ChampionManager.m_MyPhotonView, photonView.Owner, ChampionManager.m_ActualAttack.Damage,false);
 
                         HealthManager.ShowDamage(ChampionManager.m_ActualAttack.Damage);
 

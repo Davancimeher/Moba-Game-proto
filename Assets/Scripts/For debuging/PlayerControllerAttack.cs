@@ -14,8 +14,8 @@ public class PlayerControllerAttack : MonoBehaviour
 
     public Queue<AttackInput> attackInputs = new Queue<AttackInput>();
 
-    private void Update()
-    {
+    //private void Update()
+    //{
     //    if (Input.GetKeyDown(KeyCode.A))
     //    {
     //        if (inAttack)
@@ -55,23 +55,23 @@ public class PlayerControllerAttack : MonoBehaviour
     //            ExecuteAttaque(attackInput);
     //        }
     //    }
-    }
+    //}
 
-    public void ShowFx(int id)
-    {
-        if (id == 1)
-        {
-            fx1.SetActive(true);
-        }
-        else if (id == 2)
-        {
-            fx2.SetActive(true);
-        }
-        else
-        {
-            fx3.SetActive(true);
-        }
-    }
+    //public void ShowFx(int id)
+    //{
+    //    if (id == 1)
+    //    {
+    //        fx1.SetActive(true);
+    //    }
+    //    else if (id == 2)
+    //    {
+    //        fx2.SetActive(true);
+    //    }
+    //    else
+    //    {
+    //        fx3.SetActive(true);
+    //    }
+    //}
 
     public void GetNextAttaque()
     {

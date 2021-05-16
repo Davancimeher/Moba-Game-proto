@@ -1,4 +1,5 @@
-﻿using Photon.Realtime;
+﻿using Photon.Pun;
+using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,10 @@ public class RoomData : MonoBehaviour
     public Dictionary<int, GameObject> PlayersChampions = new Dictionary<int, GameObject>();
 
     public Hero MyHero;
+
+    public ChampionManager m_MyChampionManager;
+    public PhotonView m_MyPhotonView;
+
 
     private void Awake()
     {

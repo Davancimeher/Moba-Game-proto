@@ -86,6 +86,10 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
     [Header("Actual Hit Trigger")]
     public ChampionFXHolder ActualFxHolder;
 
+    [Header("Score Manger")]
+    public ChampionScore m_ChampionScore;   
+
+
     private EventTrigger Attack1Event;
     private EventTrigger Attack2Event;
     private EventTrigger Attack3Event;
@@ -165,6 +169,12 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
         InitIndicators();
         canAttack = true;
     }
+    public void InitScoresUI(TextMeshProUGUI kills, TextMeshProUGUI deaths, TextMeshProUGUI Assits)
+    {
+        m_ChampionScore.KillsText = kills;
+        m_ChampionScore.DeathsText = deaths;
+        m_ChampionScore.AssistsText = Assits;
+    }
     private void InitWithObject(GameObject _initObject, GameObject _initObjectCooldown, ref Image attackImage, ref Image attackImageCooldown, ref TextMeshProUGUI attackText, Attack attack)
     {
         attackImage = _initObject.GetComponent<Image>();
@@ -198,6 +208,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
             AutoAttackingTime = 1.5f;
             autoAttackIndicator.SetActive(true);
             m_MyPhotonView.RPC("RPC_AutoAttackExecution", RpcTarget.AllViaServer);
+            ActualFxHolder = null;
         }
     }
     public void OnClickRecallButton()
@@ -475,6 +486,7 @@ public class ChampionManager : MonoBehaviour, IInRoomCallbacks
     {
         m_MyPhotonView.RPC("RPC_SetRespawn", RpcTarget.AllViaServer);
     }
+
     [PunRPC]
     public void RPC_SetDead()
     {

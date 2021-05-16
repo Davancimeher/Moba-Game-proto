@@ -8,9 +8,9 @@ public class AttackBehaviour : StateMachineBehaviour
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (championManager == null)
-            championManager = animator.gameObject.GetComponent<ChampionManager>();
+        //if (championManager == null)
+        //    championManager = animator.gameObject.GetComponent<ChampionManager>();
 
-        championManager.EnableHitObject();
+        //championManager.EnableHitObject();
     }
 }

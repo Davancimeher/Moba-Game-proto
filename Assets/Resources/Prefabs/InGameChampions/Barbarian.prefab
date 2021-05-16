@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 7765968281293406099}
   - component: {fileID: -6028415121492054086}
   - component: {fileID: 2676695911645713189}
+  - component: {fileID: -744651501054266201}
   m_Layer: 11
   m_Name: Barbarian
   m_TagString: Untagged
@@ -222,6 +223,7 @@ MonoBehaviour:
   FxAttack2: {fileID: 7454963213864206409}
   FxAttack3: {fileID: 5090945452572500604}
   ActualFxHolder: {fileID: 0}
+  m_ChampionScore: {fileID: -744651501054266201}
   InAutoAttacking: 0
   SplatsManager: {fileID: 500397620589559166}
   EnemyHitted: 0
@@ -266,7 +268,11 @@ MonoBehaviour:
   m_PhotonView: {fileID: 1565772005613833842}
   m_ChampionManager: {fileID: 8777707174080071249}
   InRegen: 0
+  IsDead: 0
   teamIndex: 0
+  Killer: 0
+  LastAssist: 0
+  _ChampionScore: {fileID: 0}
 --- !u!65 &7579340176734219801
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -857,6 +863,27 @@ MonoBehaviour:
   fx1: {fileID: 1821463038409283665}
   fx2: {fileID: 1820000628562805139}
   fx3: {fileID: 1820000628045261133}
+--- !u!114 &-744651501054266201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148302276946099737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f37fe9adb22c245916357e63b48af2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PhotonView: {fileID: 1565772005613833842}
+  Damage: 0
+  Kills: 0
+  Deaths: 0
+  Assists: 0
+  TotalScore: 0
+  KillsText: {fileID: 0}
+  DeathsText: {fileID: 0}
+  AssistsText: {fileID: 0}
 --- !u!1 &3061992113360788040
 GameObject:
   m_ObjectHideFlags: 0
