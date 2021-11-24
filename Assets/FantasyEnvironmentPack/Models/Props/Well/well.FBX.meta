@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: addd1c8fc09a8ef4191bc5ee2b157008
+timeCreated: 1475947495
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Box002
+    100002: Box003
+    100004: Box005
+    100006: Box006
+    100008: Box007
+    100010: Box008
+    100012: Box009
+    100014: Box010
+    100016: Box012
+    100018: Box013
+    100020: Box014
+    100022: Box015
+    100024: Box017
+    100026: Box018
+    100028: Box019
+    100030: Box020
+    100032: Box021
+    100034: Box022
+    100036: Box024
+    100038: Box025
+    100040: Box026
+    100042: Tube001
+    100044: //RootNode
+    400000: Box002
+    400002: Box003
+    400004: Box005
+    400006: Box006
+    400008: Box007
+    400010: Box008
+    400012: Box009
+    400014: Box010
+    400016: Box012
+    400018: Box013
+    400020: Box014
+    400022: Box015
+    400024: Box017
+    400026: Box018
+    400028: Box019
+    400030: Box020
+    400032: Box021
+    400034: Box022
+    400036: Box024
+    400038: Box025
+    400040: Box026
+    400042: Tube001
+    400044: //RootNode
+    2300000: Box002
+    2300002: Box003
+    2300004: Box005
+    2300006: Box006
+    2300008: Box007
+    2300010: Box008
+    2300012: Box009
+    2300014: Box010
+    2300016: Box012
+    2300018: Box013
+    2300020: Box014
+    2300022: Box015
+    2300024: Box017
+    2300026: Box018
+    2300028: Box019
+    2300030: Box020
+    2300032: Box021
+    2300034: Box022
+    2300036: Box024
+    2300038: Box025
+    2300040: Box026
+    2300042: Tube001
+    3300000: Box002
+    3300002: Box003
+    3300004: Box005
+    3300006: Box006
+    3300008: Box007
+    3300010: Box008
+    3300012: Box009
+    3300014: Box010
+    3300016: Box012
+    3300018: Box013
+    3300020: Box014
+    3300022: Box015
+    3300024: Box017
+    3300026: Box018
+    3300028: Box019
+    3300030: Box020
+    3300032: Box021
+    3300034: Box022
+    3300036: Box024
+    3300038: Box025
+    3300040: Box026
+    3300042: Tube001
+    4300000: Tube001
+    4300002: Box002
+    4300004: Box003
+    4300006: Box005
+    4300008: Box006
+    4300010: Box007
+    4300012: Box008
+    4300014: Box009
+    4300016: Box010
+    4300018: Box012
+    4300020: Box013
+    4300022: Box014
+    4300024: Box015
+    4300026: Box017
+    4300028: Box018
+    4300030: Box019
+    4300032: Box020
+    4300034: Box021
+    4300036: Box022
+    4300038: Box024
+    4300040: Box025
+    4300042: Box026
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
