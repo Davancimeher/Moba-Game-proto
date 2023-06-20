@@ -17,7 +17,6 @@ The goal of this project is to create a basic prototype of a MOBA game that runs
 ## Features
 - Hero selection: Players can choose from a variety of heroes, each with unique abilities and playstyles.
 - Online multiplayer: Connect with other players in real-time matches using Photon Networking.
-- Unit control: Command units to attack, defend, or follow the player's hero.
 - Skill system: Heroes have different skills and abilities that can be upgraded throughout the match.
 - Tower defense: Protect your team's base while attempting to destroy the enemy's base.
 - UI and HUD: Includes a user-friendly interface with essential information for players.
