@@ -7,8 +7,6 @@
 ![Game Screenshot 5](5.png)
 ![Game Screenshot 6](6.png)
 
-https://www.youtube.com/watch?v=Q5lWyDzbtqw&ab_channel=MeherJouini
-
 This repository contains the source code and assets for a prototype mobile MOBA (Multiplayer Online Battle Arena) game similar to Mobile Legends. The project is built using Unity and utilizes the Photon Networking framework for multiplayer functionality.
 
 ## Description
@@ -23,17 +21,11 @@ The goal of this project is to create a basic prototype of a MOBA game that runs
 - Tower defense: Protect your team's base while attempting to destroy the enemy's base.
 - UI and HUD: Includes a user-friendly interface with essential information for players.
 
-## Getting Started
-To get started with the project, follow these steps:
-
-1. Clone the repository to your local machine.
-2. Open the project in Unity version X.X.X or later.
-3. Ensure you have the necessary dependencies, including Photon Networking.
-4. Explore the project assets, scenes, and scripts to understand the game mechanics and implementation.
-5. Build and run the project on your desired platform (Android, iOS, etc.) for testing and gameplay.
+## Video Demo
+Check out the [YouTube video demo](https://www.youtube.com/watch?v=Q5lWyDzbtqw&ab_channel=MeherJouini) to see the gameplay in action.
 
 ## Dependencies
-- Unity : [Unity Download](https://unity.com/)
+- Unity: [Unity Download](https://unity.com/)
 - Photon Networking: [Photon Website](https://www.photonengine.com/)
 
 ## Contributing
