@@ -45,4 +45,4 @@ This project is licensed under the [MIT License](LICENSE). Feel free to use and 
 - [Photon Networking](https://www.photonengine.com/) - Network framework for multiplayer functionality.
 
 ## Contact
-For any questions or inquiries, please contact [Your Name](mailto:jouin.meherr@gmail.com).
+For any questions or inquiries, please contact [Meher Jouini](mailto:jouin.meherr@gmail.com).
