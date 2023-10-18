@@ -47,6 +47,7 @@ public class PlayerMouvementTest : MonoBehaviour
             angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
 
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            direction.y = 0;
             controller.Move(direction * speed * Time.deltaTime);
 
         }
